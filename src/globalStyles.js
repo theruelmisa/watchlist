@@ -16,6 +16,7 @@ const GlobalStyles = createGlobalStyle`
         font-size: 62.5%; // 10px for easier rem sizing
     }
     body {
+        font-family: 'Open Sans', sans-serif;
         font-weight: 400;
         line-height: 1.4;
     }

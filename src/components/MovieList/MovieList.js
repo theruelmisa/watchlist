@@ -11,14 +11,14 @@ const MovieList = () => {
     useEffect(() => {
 
         async function fetchData() {
-            const request = await tmdb.get(movieRequests.upcoming)
+            const request = await tmdb.get(movieRequests.nowPlayingMovies)
             setMovies(request.data.results);
             return request;
         };
 
         fetchData();
 
-    }, [movieRequests.upcoming])
+    }, [movieRequests.nowPlayingMovies])
 
     const renderedList = movies.map( movie => {
         return (
@@ -43,5 +43,6 @@ export default MovieList;
 
 // TODO:
 
-// Create a requests file under apis or utils folder to house different fetch urls to be used 
-// Create a SearchBar to search for movies via title (Try to add auto complete feature)
+
+// Figure out which file would be best to submit search term for searching movies and making call to tmdb api
+
