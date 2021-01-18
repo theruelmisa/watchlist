@@ -11,9 +11,5 @@ const instance = axios.create({
     }
 });
 
-// Requests
-export const requests = {
-    upcoming: '/movie/upcoming',
-};
 
 export default instance;

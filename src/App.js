@@ -1,14 +1,19 @@
 import React from 'react';
-import MovieList from './components/MovieList/MovieList';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import GlobalStyles from './globalStyles';
+import {
+    HomePage 
+} from './pages';
+
 
 const App = () => {
     return (
-        <div>
+        <Router>
             <GlobalStyles />
-            <h1>Watchlist</h1>
-            <MovieList />
-        </div>
+            <Switch>
+                <Route exact path='/' component={HomePage} />
+            </Switch>
+        </Router>
     )
 };
 
