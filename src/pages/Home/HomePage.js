@@ -1,15 +1,15 @@
-import React, { useEffect } from 'react';
-import { SearchBar, MovieList } from '../../components';
+import React, { useState } from 'react';
+import { SearchBar, MovieList, Header } from '../../components';
+import { movieRequests } from '../../apis/requests';
+import { PageContainer } from '../../globalStyles';
 
 const HomePage = () => {
 
-
-
     return (
-        <div>
+        <PageContainer>
             <SearchBar />
-            <MovieList />
-        </div>
+            <MovieList title="Now Showing" fetchUrl={ movieRequests.nowPlayingMovies }/>
+        </PageContainer>
     )
 }
 
