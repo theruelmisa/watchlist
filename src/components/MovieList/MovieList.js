@@ -12,27 +12,36 @@ import {
 
 const MovieList = ({ title, fetchUrl }) => {
     const [ movies, setMovies ] = useState([]);
+    const [ selectedMovie, setSelectedMovie ] = useState({});
 
     useEffect(() => {
 
         async function fetchData() {
-            const request = await tmdb.get(fetchUrl)
-            setMovies(request.data.results);
-            return request;
+            const response = await tmdb.get(fetchUrl)
+            setMovies(response.data.results);
+            setSelectedMovie(response.data.results[0]);
+            return response;
         };
 
         fetchData();
 
-    }, [fetchUrl])
+    }, [fetchUrl]);
+
+    const movieSelectHandler = movie => {
+        setSelectedMovie(movie);
+    };
+
     // Just display first 5 items
     const renderedList = movies.map( movie => {
         return (
-            <MovieCard key={movie.id}>
+            <MovieCard key={movie.id} onClick={() => movieSelectHandler(movie)}>
                 <MoviePoster  src={`${baseImageURL}${movie.poster_path}`} alt={movie.title} />
             </MovieCard>
         )
     });
 
+    
+    console.log(selectedMovie);
     
     return ( 
 
@@ -48,6 +57,8 @@ const MovieList = ({ title, fetchUrl }) => {
 export default MovieList;
 
 // TODO:
+
+// Create modal pop up every time user selects a movie from the list
 
 
 // Figure out which file would be best to submit search term for searching movies and making call to tmdb api

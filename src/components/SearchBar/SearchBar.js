@@ -5,26 +5,9 @@ import { SearchBarContainer } from './SearchBar.elements';
 
 const SearchBar = () => {
     const [ term, setTerm ] = useState('');
-    const [ movie, setMovie ] = useState({});
 
-    useEffect(() => {
+    
 
-        async function fetchData() {
-            const request = await tmdb.get(movieRequests.searchMovie, {
-                params: {
-                    query: term
-                }
-            })
-            console.log(request)
-            setMovie(request.data.results);
-            return request;
-        };
-
-        fetchData();
-
-    }, [term])
-
-    console.log(movie)
     const onInputChange = e => {
         setTerm(e.target.value);
     }
@@ -50,3 +33,24 @@ const SearchBar = () => {
 };
 
 export default SearchBar;
+
+
+// Create a context object to house this so we can use it for every thing
+
+// useEffect(() => {
+
+//     termSubmitHandler();
+
+// }, [selectedMovie]);
+
+// const termSubmitHandler = async term => {
+//     const response = await tmdb.get(movieRequests.searchMovie, {
+//         params: {
+//             query: term
+//         }
+//     });
+
+//     console.log(response);
+//     setSelectedMovie(response.data.results[0]);    
+//     return response;
+// };
