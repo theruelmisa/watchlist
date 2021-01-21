@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { MovieDetails } from '..';
 import { tmdb } from '../../apis';
 import { baseImageURL } from '../../apis/requests';
+import { Modal } from '../Modal/Modal';
 import { 
     MoviesContainer,
     MovieCard,
@@ -13,6 +15,7 @@ import {
 const MovieList = ({ title, fetchUrl }) => {
     const [ movies, setMovies ] = useState([]);
     const [ selectedMovie, setSelectedMovie ] = useState({});
+    const [ showModal, setShowModal ] = useState(false);
 
     useEffect(() => {
 
@@ -29,6 +32,11 @@ const MovieList = ({ title, fetchUrl }) => {
 
     const movieSelectHandler = movie => {
         setSelectedMovie(movie);
+        showModalHandler();
+    };
+
+    const showModalHandler = () => {
+        setShowModal(prev => !prev);
     };
 
     // Just display first 5 items
@@ -44,13 +52,17 @@ const MovieList = ({ title, fetchUrl }) => {
     console.log(selectedMovie);
     
     return ( 
-
-        <div>
-            <h1>{title}</h1>
-            <MoviesContainer>
-                { renderedList }
-            </MoviesContainer>
-        </div>
+        <>
+            <Modal showModal={showModal} showModalHandler={showModalHandler}>
+                <MovieDetails title={selectedMovie.title} baseImageURL={baseImageURL} />
+            </Modal>
+            <div>
+                <h1>{title}</h1>
+                <MoviesContainer>
+                    { renderedList }
+                </MoviesContainer>
+            </div>
+        </>
     );
 }
 

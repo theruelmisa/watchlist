@@ -33,10 +33,7 @@ export const PageContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
     height: 90vh;
-
-    border: 1px solid red;
 `;
 
 export const Row = styled.div`
