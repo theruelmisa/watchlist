@@ -4,8 +4,13 @@ import { Row } from '../../globalStyles';
 export const MoviesContainer = styled(Row)`
     align-items: stretch;
     width: 69vw;
-    padding: 1rem;
+    padding: 2rem;
     overflow-x: scroll;
+    overflow-y: hidden;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 `;
 
 

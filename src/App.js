@@ -1,19 +1,21 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import GlobalStyles from './globalStyles';
-import {
-    HomePage 
-} from './pages';
-
+import React, { useState, useEffect } from 'react';
+import GlobalStyles, { PageContainer } from './globalStyles';
+import { SearchBar, MovieList } from './components';
+import { movieRequests } from './apis/requests';
+import { useMovies } from './hooks';
 
 const App = () => {
+    const [ movies, search ] = useMovies('Lord of the rings');
+
+
     return (
-        <Router>
+        <>
             <GlobalStyles />
-            <Switch>
-                <Route exact path='/' component={HomePage} />
-            </Switch>
-        </Router>
+            <PageContainer>
+            <SearchBar onFormSubmit={search} />
+            <MovieList title="Now Showing" fetchUrl={ movieRequests.nowPlayingMovies }/>
+            </PageContainer>
+        </>
     )
 };
 

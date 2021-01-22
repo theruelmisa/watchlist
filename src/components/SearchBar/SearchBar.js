@@ -3,7 +3,7 @@ import { tmdb } from '../../apis';
 import { movieRequests } from '../../apis/requests';
 import { SearchBarContainer } from './SearchBar.elements';
 
-const SearchBar = () => {
+const SearchBar = ({ onFormSubmit }) => {
     const [ term, setTerm ] = useState('');
 
     
@@ -12,18 +12,16 @@ const SearchBar = () => {
         setTerm(e.target.value);
     }
 
-    const onFormSubmit = e => {
+    const onSubmit = e => {
         e.preventDefault();
 
-        // Get prop from parent here 
-
-        // Then do cleanup
+        onFormSubmit(term);
         setTerm('');
     }
 
     return (
         <SearchBarContainer>
-            <form onSubmit={onFormSubmit}>
+            <form onSubmit={onSubmit}>
                 <input type='text' value={term} onChange={onInputChange} placeholder="Search Movies" />
                 <button type="submit">Search</button>
             </form>
@@ -43,14 +41,3 @@ export default SearchBar;
 
 // }, [selectedMovie]);
 
-// const termSubmitHandler = async term => {
-//     const response = await tmdb.get(movieRequests.searchMovie, {
-//         params: {
-//             query: term
-//         }
-//     });
-
-//     console.log(response);
-//     setSelectedMovie(response.data.results[0]);    
-//     return response;
-// };
