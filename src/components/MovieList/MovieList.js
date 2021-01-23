@@ -4,6 +4,8 @@ import { tmdb } from '../../apis';
 import { baseImageURL } from '../../apis/requests';
 import { Modal } from '../Modal/Modal';
 import { 
+    MovieListContainer,
+    MovieListTitle,
     MoviesContainer,
     MovieCard,
     MoviePoster 
@@ -56,12 +58,12 @@ const MovieList = ({ title, fetchUrl }) => {
             <Modal showModal={showModal} showModalHandler={showModalHandler}>
                 <MovieDetails title={selectedMovie.title} baseImageURL={baseImageURL} />
             </Modal>
-            <div>
-                <h1>{title}</h1>
+            <MovieListContainer>
+                <MovieListTitle>{title}</MovieListTitle>
                 <MoviesContainer>
                     { renderedList }
                 </MoviesContainer>
-            </div>
+            </MovieListContainer>
         </>
     );
 }

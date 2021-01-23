@@ -14,6 +14,7 @@ const App = () => {
             <PageContainer>
             <SearchBar onFormSubmit={search} />
             <MovieList title="Now Showing" fetchUrl={ movieRequests.nowPlayingMovies }/>
+            <MovieList title="Upcoming" fetchUrl={ movieRequests.upcomingMovies }/>
             </PageContainer>
         </>
     )

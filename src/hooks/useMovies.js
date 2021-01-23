@@ -8,7 +8,7 @@ const useMovies = (defaultTerm) => {
     // setSelectedMovie(response.data.results[0]);   
     useEffect(() => {
         search(defaultTerm);
-    }, []); 
+    }, [defaultTerm]); 
 
     const search = async term => {
         const response = await tmdb.get(movieRequests.searchMovie, {
