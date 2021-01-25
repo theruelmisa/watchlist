@@ -1,12 +1,12 @@
 import axios from 'axios';
 
-const KEY = '19237d69458b817b12891d1ea27c1fd0';
+const KEY = '';
 const url = 'https://api.themoviedb.org/3';
 
 const instance = axios.create({
     baseURL: url,
     params: {
-        api_key: KEY,
+        api_key: process.env.REACT_APP_TMDB_API_KEY,
         language: 'en-US'
     }
 });
