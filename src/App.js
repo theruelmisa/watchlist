@@ -8,7 +8,7 @@ import { tmdb } from './apis';
 const App = () => {
     // const [ movies, search ] = useMovies('Lord of the rings');
     const [ movies, setMovies ] = useState([]);
-    const [ category, setCategory ] = useState('Now Showing');
+    const [ selectedCategory, setSelectedCategory ] = useState('Now Showing');
 
     useEffect( () => {
         fetchMovies();
@@ -27,8 +27,13 @@ const App = () => {
         });
     
         setMovies(response.data.results);
-        setCategory('Search Results');
+        setSelectedCategory('Search Results');
         return response;
+    }
+    
+    const categorySelectHandler = (category) => {
+        // Take argument for category select 
+        // setSelectedCategory(category)
     }
 
 
@@ -36,11 +41,17 @@ const App = () => {
         <>
             <GlobalStyles />
             <PageContainer>
-                <Movies movies={movies} heading={category} />
-            <SearchBar formSubmitHandler={searchMovie} />
+                <SearchBar formSubmitHandler={searchMovie} />
+                <Movies movies={movies} heading={selectedCategory} />
             </PageContainer>
         </>
     )
 };
 
 export default App;
+
+// TODO: 
+
+// Finish styling Movie Modal component
+// Create a categories section for people to quickly choose from
+// Create a search results = 0 component for Movies component

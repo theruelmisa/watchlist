@@ -17,3 +17,4 @@ const Movie = ({ movie, baseImageURL }) => {
 }
 
 export default Movie
+

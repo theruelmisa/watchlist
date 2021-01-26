@@ -31,11 +31,4 @@ const SearchBar = ({ formSubmitHandler }) => {
 export default SearchBar;
 
 
-// Create a context object to house this so we can use it for every thing
-
-// useEffect(() => {
-
-//     termSubmitHandler();
-
-// }, [selectedMovie]);
 

@@ -35,14 +35,24 @@ const Movies = ({ movies, heading }) => {
             <Modal showModal={showModal} showModalHandler={showModalHandler}>
                 <Movie baseImageURL={baseImageURL} movie={selectedMovie} />
             </Modal>
-            <MoviesSection>
-                <MoviesContainerTitle>{heading}</MoviesContainerTitle>
-                <MoviesContainer>
-                    {renderedList}
-                </MoviesContainer>
-            </MoviesSection>
+            {
+                movies.length > 0 ? 
+                (
+                    <MoviesSection>
+                        <MoviesContainerTitle>{heading}</MoviesContainerTitle>
+                        <MoviesContainer>
+                            {renderedList}
+                        </MoviesContainer>
+                    </MoviesSection>
+                ) : ( 
+                    <div> 
+                        <h1>Can't find that movie</h1>
+                    </div> 
+                )
+            }
         </>
     );
 }
 
 export default Movies;
+
