@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-const KEY = '';
 const url = 'https://api.themoviedb.org/3';
 
 const instance = axios.create({

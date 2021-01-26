@@ -3,26 +3,24 @@ import { tmdb } from '../../apis';
 import { movieRequests } from '../../apis/requests';
 import { SearchBarContainer } from './SearchBar.elements';
 
-const SearchBar = ({ onFormSubmit }) => {
+const SearchBar = ({ formSubmitHandler }) => {
     const [ term, setTerm ] = useState('');
 
-    
-
-    const onInputChange = e => {
+    const inputChangeHandler = e => {
         setTerm(e.target.value);
     }
 
-    const onSubmit = e => {
+    const submitHandler = e => {
         e.preventDefault();
 
-        onFormSubmit(term);
+        formSubmitHandler(term);
         setTerm('');
     }
 
     return (
         <SearchBarContainer>
-            <form onSubmit={onSubmit}>
-                <input type='text' value={term} onChange={onInputChange} placeholder="Search Movies" />
+            <form onSubmit={submitHandler}>
+                <input type='text' value={term} onChange={inputChangeHandler} placeholder="Search Movies" />
                 <button type="submit">Search</button>
             </form>
         </SearchBarContainer>
