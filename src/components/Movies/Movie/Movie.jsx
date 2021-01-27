@@ -11,7 +11,12 @@ const Movie = ({ movie, baseImageURL }) => {
     return (
         <MovieSection>
             <MovieBackdrop src={`${baseImageURL}${movie.backdrop_path}`} alt={movie.movietitle} />
+            <button>Save Movie</button>
             <h3>{movie.title}</h3>
+            <div>
+                <p>rating: {movie.vote_average} / 10</p>
+            </div>
+            <p>{movie.overview}</p>
         </MovieSection>
     )
 }

@@ -24,7 +24,7 @@ const Movies = ({ movies, heading }) => {
     }
 
 
-    const renderedList = movies.filter( movie => movie.poster_path).map( movie => (
+    const renderedList = movies.filter( movie => movie.poster_path && movie.backdrop_path).map( movie => (
         <MovieCard key={movie.id} onClick={() => movieSelectHandler(movie)}>
             <MoviePoster  src={`${baseImageURL}${movie.poster_path}`} alt={movie.title} />
         </MovieCard>
