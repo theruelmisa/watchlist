@@ -50,4 +50,13 @@ export const Row = styled.div`
     justify-content: space-between;
 `;
 
+export const Button = styled.button`
+    cursor: pointer;
+    padding: 1.5rem 2.2rem;
+    border: none;
+    border-radius: .5rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+`;
+
 export default GlobalStyles;

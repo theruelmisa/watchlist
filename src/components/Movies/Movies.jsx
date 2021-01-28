@@ -10,7 +10,7 @@ import {
     MoviePoster 
 } from './Movies.elements';
 
-const Movies = ({ movies, heading, savedMovies, saveMovieHandler, removeMovieHandler, savedMoviesList }) => {
+const Movies = ({ movies, heading, savedMovies, addMovieHandler, removeMovieHandler, savedMoviesList }) => {
     const [ selectedMovie, setSelectedMovie ] = useState({});
     const [ showModal, setShowModal ] = useState(false);
 
@@ -37,7 +37,7 @@ const Movies = ({ movies, heading, savedMovies, saveMovieHandler, removeMovieHan
                     baseImageURL={baseImageURL} 
                     movie={selectedMovie} 
                     savedMovies={savedMovies} 
-                    saveMovieHandler={saveMovieHandler} 
+                    addMovieHandler={addMovieHandler} 
                     removeMovieHandler={removeMovieHandler}
                     showModalHandler={showModalHandler}
                     showModalHandler={showModalHandler}
@@ -54,7 +54,11 @@ const Movies = ({ movies, heading, savedMovies, saveMovieHandler, removeMovieHan
                     </MoviesSection>
                 ) : ( 
                     <div> 
-                        <h1>Can't find that movie</h1>
+                        <h1>
+                            {
+                                savedMoviesList ? "Your watchlist is empty." : "Can't find that movie"
+                            }
+                        </h1>
                     </div> 
                 )
             }

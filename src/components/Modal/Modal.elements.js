@@ -13,7 +13,7 @@ export const Overlay = styled.div`
 
 export const ModalWrapper = styled.div`
     width: 100rem;
-    height: 60rem;
+    height: 70rem;
     background: #fafafa;
     position: relative;
     z-index: 10;
@@ -22,7 +22,7 @@ export const ModalWrapper = styled.div`
 export const ModalCloseButton = styled(IoClose)`
     cursor: pointer;
     position: absolute;
-    top: 2rem;
+    top: 1rem;
     right: 2rem;
     width: 3rem;
     height: 3rem;

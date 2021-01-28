@@ -1,15 +1,22 @@
 import React from 'react';
 import {
     MovieSection,
-    MovieBackdrop
+    MovieBackdrop,
+    TitleContainer,
+    TitleCard,
+    Title,
+    Rating,
+    Description,
+    AddButton,
+    RemoveButton
 } from './Movie.elements';
 
-const Movie = ({ movie, baseImageURL, savedMovies, saveMovieHandler, removeMovieHandler, showModalHandler }) => {
+const Movie = ({ movie, baseImageURL, savedMovies, addMovieHandler, removeMovieHandler, showModalHandler }) => {
 
     // console.log(movie);
 
-    const saveMovieClick = movie => {
-        saveMovieHandler(movie);
+    const addMovieClick = movie => {
+        addMovieHandler(movie);
         showModalHandler();
     }
 
@@ -18,25 +25,27 @@ const Movie = ({ movie, baseImageURL, savedMovies, saveMovieHandler, removeMovie
         showModalHandler();
     }
 
-    let renderedButton = <button onClick={() => saveMovieClick(movie)}> Save </button>;
+    let renderedButton = (<AddButton onClick={() => addMovieClick(movie)}> Add to Watchlist </AddButton>);
 
     savedMovies.filter(savedMovie => {
         if (savedMovie.id === movie.id) {
-            console.log(movie.id);
-            console.log(savedMovie.id)
-            renderedButton =<button onClick={() => removeMovieClick(savedMovie.id)}> Remove </button>;
+            renderedButton = (<RemoveButton onClick={() => removeMovieClick(savedMovie.id)}> Remove from Watchlist </RemoveButton>);
         }
     })
 
     return (
         <MovieSection>
             <MovieBackdrop src={`${baseImageURL}${movie.backdrop_path}`} alt={movie.movietitle} />
-            { renderedButton }
-            <h3>{movie.title}</h3>
-            <div>
-                <p>rating: {movie.vote_average} / 10</p>
-            </div>
-            <p>{movie.overview}</p>
+            <TitleContainer>
+                <TitleCard>
+                    <Title>{movie.title}</Title>
+                    <Rating>rating: {movie.vote_average} / 10</Rating>
+                </TitleCard>
+
+                { renderedButton }
+            </TitleContainer>
+            <Description>{movie.overview}</Description>
+
         </MovieSection>
     )
 }
