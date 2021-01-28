@@ -6,7 +6,7 @@ import {
 
 const Movie = ({ movie, baseImageURL, savedMovies, saveMovieHandler, removeMovieHandler, showModalHandler }) => {
 
-    console.log(movie);
+    // console.log(movie);
 
     const saveMovieClick = movie => {
         saveMovieHandler(movie);
@@ -19,6 +19,14 @@ const Movie = ({ movie, baseImageURL, savedMovies, saveMovieHandler, removeMovie
     }
 
     let renderedButton = <button onClick={() => saveMovieClick(movie)}> Save </button>;
+
+    savedMovies.filter(savedMovie => {
+        if (savedMovie.id === movie.id) {
+            console.log(movie.id);
+            console.log(savedMovie.id)
+            renderedButton =<button onClick={() => removeMovieClick(savedMovie.id)}> Remove </button>;
+        }
+    })
 
     return (
         <MovieSection>

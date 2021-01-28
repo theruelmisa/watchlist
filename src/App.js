@@ -44,7 +44,7 @@ const App = () => {
     }
 
     const removeMovieHandler = id => {
-        const filteredSavedMovies = savedMovies.filter( movie => movie.id === id);
+        const filteredSavedMovies = savedMovies.filter( movie => movie.id !== id);
 
         setSavedMovies(filteredSavedMovies);
     }
@@ -70,3 +70,4 @@ export default App;
 // Finish styling Movie Modal component
 // Create a categories section for people to quickly choose from
 // Create a search results = 0 component for Movies component
+// Figure out render of button
