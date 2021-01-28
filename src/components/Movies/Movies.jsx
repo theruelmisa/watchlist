@@ -10,7 +10,7 @@ import {
     MoviePoster 
 } from './Movies.elements';
 
-const Movies = ({ movies, heading }) => {
+const Movies = ({ movies, heading, savedMovies, saveMovieHandler, removeMovieHandler, savedMoviesList }) => {
     const [ selectedMovie, setSelectedMovie ] = useState({});
     const [ showModal, setShowModal ] = useState(false);
 
@@ -33,14 +33,22 @@ const Movies = ({ movies, heading }) => {
     return ( 
         <>
             <Modal showModal={showModal} showModalHandler={showModalHandler}>
-                <Movie baseImageURL={baseImageURL} movie={selectedMovie} />
+                <Movie 
+                    baseImageURL={baseImageURL} 
+                    movie={selectedMovie} 
+                    savedMovies={savedMovies} 
+                    saveMovieHandler={saveMovieHandler} 
+                    removeMovieHandler={removeMovieHandler}
+                    showModalHandler={showModalHandler}
+                    showModalHandler={showModalHandler}
+                />
             </Modal>
             {
                 movies.length > 0 ? 
                 (
                     <MoviesSection>
                         <MoviesContainerTitle>{heading}</MoviesContainerTitle>
-                        <MoviesContainer>
+                        <MoviesContainer savedMoviesList>
                             {renderedList}
                         </MoviesContainer>
                     </MoviesSection>

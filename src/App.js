@@ -38,22 +38,26 @@ const App = () => {
     }
 
     const saveMovieHandler = movie => {
-        setSavedMovies(movie);
+        
+        const newSavedList = [ ...savedMovies, movie ];
+        setSavedMovies(newSavedList);
     }
 
     const removeMovieHandler = id => {
-        // filter it out from savedMovies array
+        const filteredSavedMovies = savedMovies.filter( movie => movie.id === id);
 
+        setSavedMovies(filteredSavedMovies);
     }
 
+    console.log(savedMovies);
 
     return (
         <>
             <GlobalStyles />
             <PageContainer>
                 <SearchBar formSubmitHandler={searchMovie} />
-                <Movies movies={movies} heading={selectedCategory} saveMovieHandler={saveMovieHandler}/>
-                <Movies movies={movies} heading="Watch list" removeMovieHandler={removeMovieHandler}/>
+                <Movies movies={movies} heading={selectedCategory} saveMovieHandler={saveMovieHandler} savedMovies={savedMovies}/>
+                <Movies movies={savedMovies} heading="Watch list" removeMovieHandler={removeMovieHandler} savedMovies={savedMovies} savedMoviesList/>
             </PageContainer>
         </>
     )

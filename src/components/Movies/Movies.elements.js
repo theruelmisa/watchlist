@@ -12,11 +12,11 @@ export const MoviesContainerTitle = styled.h1`
 `;
 
 export const MoviesContainer = styled(Row)`
-    border: 1px solid red;
-
     width: 69vw;
     padding: 1rem;
     overflow-x: scroll;
+
+    justify-content: ${props => props.savedMoviesList ? 'start' : 'space-between'}
 `;
 
 export const MovieCard = styled.div`
