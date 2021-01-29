@@ -48,10 +48,12 @@ export const Description = styled.p`
 export const AddButton = styled(Button)`
     color: #fafafa;
     background-color: #136deb;
+    margin-bottom: 1rem;
 `;
 
 export const RemoveButton = styled(Button)`
     color: #d00;
     border: 2px solid #d00;
     background-color: inherit;
+    margin-bottom: 1rem;
 `;

@@ -12,6 +12,15 @@ const App = () => {
     useEffect( () => {
         fetchMovies();
     }, [])
+
+    useEffect( () => {
+        const watchList = JSON.parse(localStorage.getItem('watch-list'));
+        setSavedMovies(watchList);
+    }, [])
+
+    const saveToLocalStorage = items => {
+        localStorage.setItem('watch-list', JSON.stringify(items));
+    }
     
     const fetchMovies = async () => {
         const response = await tmdb.get('/movie/now_playing');
@@ -39,15 +48,16 @@ const App = () => {
         
         const newSavedList = [ ...savedMovies, movie ];
         setSavedMovies(newSavedList);
+        saveToLocalStorage(newSavedList);
     }
 
     const removeMovieHandler = id => {
         const filteredSavedMovies = savedMovies.filter( movie => movie.id !== id);
 
         setSavedMovies(filteredSavedMovies);
+        saveToLocalStorage(filteredSavedMovies);
     }
 
-    console.log(savedMovies);
 
     return (
         <>
@@ -80,3 +90,4 @@ export default App;
 // Style Search Bar Component
 // Create a categories section for people to quickly choose from
 // Create a search results = 0 component for Movies component
+// gaby is a hobbit

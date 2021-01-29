@@ -52,11 +52,10 @@ export const Row = styled.div`
 
 export const Button = styled.button`
     cursor: pointer;
-    padding: 1.5rem 2.2rem;
+    padding: 1.2rem 2.2rem;
     border: none;
     border-radius: .5rem;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.4rem;
 `;
 
 export default GlobalStyles;

@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { tmdb } from '../../apis';
-import { movieRequests } from '../../apis/requests';
-import { SearchBarContainer } from './SearchBar.elements';
+import React, { useState } from 'react';
+import { 
+    SearchForm,
+    InputField,
+    SearchButton
+} from './SearchBar.elements';
 
 const SearchBar = ({ formSubmitHandler }) => {
     const [ term, setTerm ] = useState('');
@@ -18,13 +20,15 @@ const SearchBar = ({ formSubmitHandler }) => {
     }
 
     return (
-        <SearchBarContainer>
-            <form onSubmit={submitHandler}>
-                <input type='text' value={term} onChange={inputChangeHandler} placeholder="Search Movies" />
-                <button type="submit">Search</button>
-            </form>
-        </SearchBarContainer>
-
+        <SearchForm onSubmit={submitHandler}>
+            <InputField type='text' value={term} onChange={inputChangeHandler} placeholder="Search Movies" />
+            <SearchButton 
+                type="submit" 
+                disabled={term === '' ? true : false}
+            >
+                Search
+            </SearchButton>
+        </SearchForm>
     )
 };
 

@@ -27,10 +27,11 @@ const Movie = ({ movie, baseImageURL, savedMovies, addMovieHandler, removeMovieH
 
     let renderedButton = (<AddButton onClick={() => addMovieClick(movie)}> Add to Watchlist </AddButton>);
 
-    savedMovies.filter(savedMovie => {
+    savedMovies.forEach(savedMovie => {
         if (savedMovie.id === movie.id) {
             renderedButton = (<RemoveButton onClick={() => removeMovieClick(savedMovie.id)}> Remove from Watchlist </RemoveButton>);
         }
+
     })
 
     return (
