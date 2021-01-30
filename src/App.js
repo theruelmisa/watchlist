@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import GlobalStyles, { PageContainer } from './globalStyles';
-import { SearchBar, Movies } from './components';
+import { 
+    Navbar, 
+    SearchBar, 
+    Movies 
+} from './components';
 import { movieRequests } from './apis/requests';
 import { tmdb } from './apis';
 
@@ -63,6 +67,7 @@ const App = () => {
         <>
             <GlobalStyles />
             <PageContainer>
+                <Navbar />
                 <SearchBar formSubmitHandler={searchMovie} />
                 <Movies 
                     movies={movies} 

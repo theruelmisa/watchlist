@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { IoSearch } from 'react-icons/io5';
 import { 
     SearchForm,
     InputField,
@@ -26,7 +27,7 @@ const SearchBar = ({ formSubmitHandler }) => {
                 type="submit" 
                 disabled={term === '' ? true : false}
             >
-                Search
+                <IoSearch />
             </SearchButton>
         </SearchForm>
     )

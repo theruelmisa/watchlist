@@ -55,7 +55,12 @@ export const Button = styled.button`
     padding: 1.2rem 2.2rem;
     border: none;
     border-radius: .5rem;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+    letter-spacing: .15rem;
+
+    &:active, &:focus {
+        outline: none;
+    }
 `;
 
 export default GlobalStyles;
