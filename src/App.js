@@ -92,7 +92,7 @@ export default App;
 
 // TODO: 
 
-// Style Search Bar Component
+// Finish styling of Navbar
 // Create a categories section for people to quickly choose from
 // Create a search results = 0 component for Movies component
-// gaby is a hobbit
+// See how to add Gsap to project
