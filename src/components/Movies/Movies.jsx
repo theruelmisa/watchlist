@@ -1,70 +1,20 @@
-import React, { useState } from 'react';
-import { Modal } from '../Modal/Modal';
+import React from 'react';
 import Movie from './Movie/Movie';
-import { baseImageURL } from '../../apis/requests';
-import { 
-    MoviesSection,
-    MoviesContainer,
-    MoviesContainerTitle,
-    MovieCard,
-    MoviePoster 
-} from './Movies.elements';
 
-const Movies = ({ movies, heading, savedMovies, addMovieHandler, removeMovieHandler, savedMoviesList }) => {
-    const [ selectedMovie, setSelectedMovie ] = useState({});
-    const [ showModal, setShowModal ] = useState(false);
+const Movies = ({ movies }) => {
 
-    const movieSelectHandler = movie => {
-        setSelectedMovie(movie);
-        showModalHandler();
-    }
+    console.log(movies);
 
-    const showModalHandler = () => {
-        setShowModal(prev => !prev);
-    }
-
-
-    const renderedList = movies.filter( movie => movie.poster_path && movie.backdrop_path).map( movie => (
-        <MovieCard key={movie.id} onClick={() => movieSelectHandler(movie)}>
-            <MoviePoster  src={`${baseImageURL}${movie.poster_path}`} alt={movie.title} />
-        </MovieCard>
-    ));
-                                
-    return ( 
-        <>
-            <Modal showModal={showModal} showModalHandler={showModalHandler}>
-                <Movie 
-                    baseImageURL={baseImageURL} 
-                    movie={selectedMovie} 
-                    savedMovies={savedMovies} 
-                    addMovieHandler={addMovieHandler} 
-                    removeMovieHandler={removeMovieHandler}
-                    showModalHandler={showModalHandler}
-                    showModalHandler={showModalHandler}
-                />
-            </Modal>
+    return (
+        <div>
+            List of Movies
             {
-                movies.length > 0 ? 
-                (
-                    <MoviesSection>
-                        <MoviesContainerTitle>{heading}</MoviesContainerTitle>
-                        <MoviesContainer savedMoviesList>
-                            {renderedList}
-                        </MoviesContainer>
-                    </MoviesSection>
-                ) : ( 
-                    <div> 
-                        <h1>
-                            {
-                                savedMoviesList ? "Your watchlist is empty." : "Can't find that movie"
-                            }
-                        </h1>
-                    </div> 
-                )
+                movies.map( movie => (
+                    <Movie key={ movie.id } movie={ movie } />
+                ))
             }
-        </>
-    );
+        </div>
+    )
 }
 
 export default Movies;
-

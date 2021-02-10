@@ -1,17 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import GlobalStyles, { PageContainer } from './globalStyles';
-import { 
-    Navbar, 
-    SearchBar, 
-    Movies 
-} from './components';
-import { movieRequests } from './apis/requests';
-import { tmdb } from './apis';
+import tmdb, { movieRequests } from './apis/tmdb';
+import { Navbar, Movies } from './components';
+import GlobalStyles from './globalStyles';
+
 
 const App = () => {
     const [ movies, setMovies ] = useState([]);
     const [ savedMovies, setSavedMovies ] = useState([]);
-    const [ selectedCategory, setSelectedCategory ] = useState('Now Showing');
 
     useEffect( () => {
         fetchMovies();
@@ -39,23 +34,17 @@ const App = () => {
         });
     
         setMovies(response.data.results);
-        setSelectedCategory('Search Results');
         return response;
     }
     
-    const categorySelectHandler = (category) => {
-        // Take argument for category select 
-        // setSelectedCategory(category)
-    }
-
-    const addMovieHandler = movie => {
+    const handleSaveMovie = movie => {
         
         const newSavedList = [ ...savedMovies, movie ];
         setSavedMovies(newSavedList);
         saveToLocalStorage(newSavedList);
     }
 
-    const removeMovieHandler = id => {
+    const handleRemoveMovie = id => {
         const filteredSavedMovies = savedMovies.filter( movie => movie.id !== id);
 
         setSavedMovies(filteredSavedMovies);
@@ -66,24 +55,10 @@ const App = () => {
     return (
         <>
             <GlobalStyles />
-            <PageContainer>
-                <Navbar />
-                <SearchBar formSubmitHandler={searchMovie} />
-                <Movies 
-                    movies={movies} 
-                    heading={selectedCategory} 
-                    addMovieHandler={addMovieHandler} 
-                    removeMovieHandler={removeMovieHandler} 
-                    savedMovies={savedMovies}
-                />
-                <Movies 
-                    movies={savedMovies} 
-                    heading="Watch list" 
-                    removeMovieHandler={removeMovieHandler} 
-                    savedMovies={savedMovies} 
-                    savedMoviesList
-                />
-            </PageContainer>
+            <div>
+                <Navbar searchMovie={ searchMovie }/>
+                <Movies movies={ movies } handleSaveMovie={ handleSaveMovie } handleRemoveMovie={ handleRemoveMovie } />
+            </div>
         </>
     )
 };
@@ -92,7 +67,8 @@ export default App;
 
 // TODO: 
 
-// Finish styling of Navbar
-// Create a categories section for people to quickly choose from
-// Create a search results = 0 component for Movies component
-// See how to add Gsap to project
+// REDO EVERY THING
+// 1. Navbar with Search Component
+// 2. Search Results
+// 3. Watchlist
+// 4. Footer 

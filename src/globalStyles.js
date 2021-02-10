@@ -2,7 +2,8 @@ import styled, { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
     :root {
-
+        --midnight: #052439;
+        --white: #fafafa;
     }
 
     *, 
@@ -19,6 +20,8 @@ const GlobalStyles = createGlobalStyle`
         font-family: 'Open Sans', sans-serif;
         font-weight: 400;
         line-height: 1.4;
+        background: var(--midnight);
+        color: var(--white);
     }
     a { 
         color: inherit;
@@ -29,26 +32,26 @@ const GlobalStyles = createGlobalStyle`
     }
 `;
 
-export const Section = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 2rem;
-    padding: 1rem 2rem;
-`;
-
-export const PageContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 90vh;
-`;
+// Containers
 
 export const Row = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
 `;
+
+
+// Typography
+
+export const Mainheading = styled.h1`
+    font-size: 2.5rem;
+`;
+
+export const Subheading = styled.h3`
+    font-size: 2rem;
+`;
+
+// Button Styles
 
 export const Button = styled.button`
     cursor: pointer;
@@ -58,9 +61,11 @@ export const Button = styled.button`
     font-size: 1.2rem;
     letter-spacing: .15rem;
 
+    
     &:active, &:focus {
         outline: none;
     }
 `;
+
 
 export default GlobalStyles;
