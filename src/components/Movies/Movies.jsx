@@ -1,19 +1,19 @@
 import React from 'react';
 import Movie from './Movie/Movie';
+import { MoviesContainer } from './Movies.elements';
 
 const Movies = ({ movies }) => {
 
     console.log(movies);
 
     return (
-        <div>
-            List of Movies
+        <MoviesContainer>
             {
                 movies.map( movie => (
-                    <Movie key={ movie.id } movie={ movie } />
+                    <Movie key={ movie.id } { ...movie } />
                 ))
             }
-        </div>
+        </MoviesContainer>
     )
 }
 

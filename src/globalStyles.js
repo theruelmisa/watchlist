@@ -51,6 +51,10 @@ export const Subheading = styled.h3`
     font-size: 2rem;
 `;
 
+export const body1 = styled.p`
+    font-size: 1.4rem;
+`;
+
 // Button Styles
 
 export const Button = styled.button`
