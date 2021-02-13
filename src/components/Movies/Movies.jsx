@@ -7,13 +7,15 @@ const Movies = ({ movies }) => {
     console.log(movies);
 
     return (
-        <MoviesContainer>
+        <>
+            <MoviesContainer>
             {
                 movies.map( movie => (
                     <Movie key={ movie.id } { ...movie } />
                 ))
             }
-        </MoviesContainer>
+            </MoviesContainer>
+        </>
     )
 }
 

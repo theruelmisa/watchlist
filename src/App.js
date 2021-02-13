@@ -68,7 +68,6 @@ export default App;
 // TODO: 
 
 // REDO EVERY THING
-// 1. Navbar with Search Component
 // 2. Search Results
 // 3. Watchlist
 // 4. Footer 
