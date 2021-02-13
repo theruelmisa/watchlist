@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Button } from '../../../globalStyles';
 
 export const SearchForm = styled.form`
-    width: 40vw;
+    width: 20vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,6 +21,7 @@ export const InputField = styled.input`
     padding: .7rem 2rem;
     caret-color: #3c3c3c;
     transition: width 0.8s ease;
+
     &:focus {
         outline: none;
         width:100%;
@@ -37,8 +38,4 @@ export const SearchButton = styled(Button)`
     border-radius: 10rem;
     background-color: #f4f2f2;
     color: #3c3c3c;
-
-    &:focus {
-        outline: none;
-    }
 `;

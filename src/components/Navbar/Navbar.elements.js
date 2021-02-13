@@ -6,7 +6,7 @@ export const NavbarContainer = styled(Row)`
     width: 100%;
     height: 8vh;
     margin-bottom: 5rem;
-    padding: 1rem 5rem;
+    padding: 0 5rem;
 `;
 
 export const LogoBox = styled(Row)`

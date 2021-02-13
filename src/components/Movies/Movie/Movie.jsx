@@ -13,9 +13,12 @@ import { IoHeart, IoHeartOutline } from 'react-icons/io5';
 
 const Movie = ({ title, vote_average, poster_path, isSaved }) => {
 
+    const movieImg = poster_path ? `${ baseImageURL }${ poster_path }`
+    : 'http://via.placeholder.com/2080x2080';
+
     return (
         <MovieContainer>
-            <MoviePoster src={`${ baseImageURL }${ poster_path }`} alt={ title } />
+            <MoviePoster src={ movieImg } alt={ title } />
             <Row>
                 <MovieInfo>
                     <MovieTitle>{ title }</MovieTitle> 

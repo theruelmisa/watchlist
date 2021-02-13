@@ -10,8 +10,9 @@ export const MovieContainer = styled.div`
 `;
 
 export const MoviePoster = styled.img`
-    object-fit: contain;
-    max-width: 100%;
+    object-fit: cover;
+    width: 100%;
+    height: 50rem;
 `;
 
 export const MovieInfo = styled(Row)`
