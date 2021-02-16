@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { IoFilmOutline } from 'react-icons/io5';
 import { Row } from '../../globalStyles';
 
 export const HeaderContainer = styled(Row)`
@@ -11,16 +10,15 @@ export const HeaderContainer = styled(Row)`
 
 export const LogoBox = styled(Row)`
     cursor: pointer;
-    padding: 0 2rem;
-    margin-left: 5rem;
-`;
-
-export const Logo = styled(IoFilmOutline)`
-    font-size: 5rem;
-    margin-right: .7rem;
 `;
 
 export const LogoText = styled.h1`
-    font-size: 2rem;
-    letter-spacing: .2rem;
+    font-size: 3.2rem;
+    font-weight: 300;
+    letter-spacing: .5rem;
+`;
+
+export const WelcomeText = styled.h3`
+    font-size: 1.8rem;
+    font-weight: 400;
 `;

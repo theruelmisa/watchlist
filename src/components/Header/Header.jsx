@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeaderContainer, LogoBox, Logo, LogoText } from './Header.elements';
+import { HeaderContainer, LogoBox, LogoText, WelcomeText } from './Header.elements';
 import Searchbar from './Searchbar/Searchbar';
 
 const Header = ({ searchMovie }) => {
@@ -7,10 +7,10 @@ const Header = ({ searchMovie }) => {
         <>
             <HeaderContainer>
                 <LogoBox>
-                    <Logo />
                     <LogoText>Watchlist</LogoText>
                 </LogoBox>
                 <Searchbar onSearchMovie={ searchMovie } />
+                <WelcomeText>Welcome, Guest!</WelcomeText>
             </HeaderContainer>
         </>
     )

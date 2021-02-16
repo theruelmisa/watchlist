@@ -16,10 +16,10 @@ export const InputField = styled.input`
     background-color: #f4f2f2;
     box-shadow: 1px 5px 15px #f0eeee;
     margin-right: -3.5rem;
-    width: 50%;
+    width: 80%;
     padding: .7rem 2rem;
     caret-color: #3c3c3c;
-    transition: width 0.8s ease;
+    transition: width 0.3s ease;
 
     &:focus {
         outline: none;
