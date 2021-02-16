@@ -7,6 +7,7 @@ export const MovieContainer = styled.div`
     width: 30rem;
     margin-bottom: 2.5rem;
     margin-right: 2rem;
+    background-color: black;
 `;
 
 export const MoviePoster = styled.img`

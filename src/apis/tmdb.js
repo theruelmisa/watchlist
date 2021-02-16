@@ -21,7 +21,7 @@ export const movieRequests = {
     topRatedMovies: '/movie/top_rated'
 }
 
-export const baseImageURL = 'http://image.tmdb.org/t/p/w1280';
+export const baseImageURL = 'http://image.tmdb.org/t/p/original';
 
 
 export default instance;

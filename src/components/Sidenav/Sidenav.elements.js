@@ -6,28 +6,46 @@ export const Sidebar = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-right: 1px solid #ababab;
 `;
 
 export const Nav = styled.nav`
-    border: 1px solid red;
     font-size: 1.5rem;
     text-align: center;
     list-style: none;
 `;
 
 export const Menu = styled.ul`
-    border: 1px solid red;
-
 `;
 
 export const MenuItem = styled.li`
-    border: 1px solid red;
+    position: relative;
 
+    &:not(:last-child) {
+        margin-bottom: .5rem;
+    } 
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 3px;
+        background-color: black;
+        transform: scaleY(0);
+        transition: transform .3s,
+                    width .5s cubic-bezier(1, 0, 0, 1) .3s;
+    }
+
+    &:hover::before {
+        transform: scaleY(1);
+        width: 100%;
+    }
 `;
 
 export const ItemLink = styled.a`
-    border: 1px solid red;
+    position: relative;
+    z-index: 5;
     display: block;
     padding: 1.5rem 3rem;
 
