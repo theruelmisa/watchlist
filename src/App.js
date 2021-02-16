@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import tmdb, { movieRequests } from './apis/tmdb';
-import { Navbar, Movies } from './components';
+import { Header, Movies } from './components';
 import GlobalStyles from './globalStyles';
 
 
@@ -56,7 +56,7 @@ const App = () => {
         <>
             <GlobalStyles />
             <div>
-                <Navbar searchMovie={ searchMovie }/>
+                <Header searchMovie={ searchMovie }/>
                 <Movies movies={ movies } handleSaveMovie={ handleSaveMovie } handleRemoveMovie={ handleRemoveMovie } />
             </div>
         </>

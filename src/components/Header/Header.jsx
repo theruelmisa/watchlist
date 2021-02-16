@@ -1,20 +1,19 @@
-import React from 'react'
-import { NavbarContainer, LogoBox, Logo, LogoText } from './Navbar.elements';
+import React from 'react';
+import { HeaderContainer, LogoBox, Logo, LogoText } from './Header.elements';
 import Searchbar from './Searchbar/Searchbar';
 
-
-const Navbar = ({ searchMovie }) => {
+const Header = ({ searchMovie }) => {
     return (
         <>
-            <NavbarContainer>
+            <HeaderContainer>
                 <LogoBox>
                     <Logo />
                     <LogoText>Watchlist</LogoText>
                 </LogoBox>
                 <Searchbar onSearchMovie={ searchMovie } />
-            </NavbarContainer>
+            </HeaderContainer>
         </>
     )
-}
+};
 
-export default Navbar;
+export default Header;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { IoFilmOutline } from 'react-icons/io5';
 import { Row } from '../../globalStyles';
 
-export const NavbarContainer = styled(Row)`
+export const HeaderContainer = styled(Row)`
     width: 100%;
     height: 8vh;
     margin-bottom: 5rem;
