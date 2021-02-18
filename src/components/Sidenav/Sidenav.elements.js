@@ -6,6 +6,8 @@ export const Sidebar = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    border: 1px solid red;
 `;
 
 export const Nav = styled.nav`

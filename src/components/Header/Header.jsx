@@ -1,15 +1,13 @@
 import React from 'react';
 import { HeaderContainer, LogoBox, LogoText, WelcomeText } from './Header.elements';
-import Searchbar from './Searchbar/Searchbar';
 
-const Header = ({ searchMovie }) => {
+const Header = () => {
     return (
         <>
             <HeaderContainer>
                 <LogoBox>
                     <LogoText>Watchlist</LogoText>
                 </LogoBox>
-                <Searchbar onSearchMovie={ searchMovie } />
                 <WelcomeText>Welcome, Guest!</WelcomeText>
             </HeaderContainer>
         </>

@@ -34,6 +34,14 @@ const GlobalStyles = createGlobalStyle`
 
 // Containers
 
+export const Grid = styled.div`
+    display: grid;
+`;
+
+export const MainGrid = styled(Grid)`
+    border: 1px solid red;
+`;
+
 export const Row = styled.div`
     display: flex;
     align-items: center;

@@ -3,11 +3,10 @@ import { Row, Subheading, body1 } from '../../../globalStyles';
 
 
 export const MovieContainer = styled.div`
-    border: 1px solid red;
+    border: 1px solid #ddd;
     width: 30rem;
     margin-bottom: 2.5rem;
     margin-right: 2rem;
-    background-color: black;
 `;
 
 export const MoviePoster = styled.img`

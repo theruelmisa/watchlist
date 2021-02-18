@@ -1,11 +1,13 @@
 import styled from 'styled-components';
-import { Button } from '../../../globalStyles';
+import { Button } from '../../globalStyles';
 
 export const SearchForm = styled.form`
     flex: 0 0 20%;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    border: 1px solid red;
 `;
 
 export const InputField = styled.input`

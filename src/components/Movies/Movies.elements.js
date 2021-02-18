@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export const MoviesContainer = styled.div`
-    flex: 1;
     display: flex;
     justify-content: center;
-    background-color: white;
-    overflow: auto;
+    flex-wrap: wrap;
     padding: 3rem 0;
+
+    border: 1px solid red;
 `;

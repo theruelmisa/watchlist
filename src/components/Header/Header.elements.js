@@ -6,6 +6,8 @@ export const HeaderContainer = styled(Row)`
     height: 8vh;
     margin-bottom: 5rem;
     padding: 0 5rem;
+
+    border: 1px solid red;
 `;
 
 export const LogoBox = styled(Row)`
