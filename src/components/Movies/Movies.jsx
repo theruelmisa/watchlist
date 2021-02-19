@@ -20,3 +20,7 @@ const Movies = ({ movies }) => {
 }
 
 export default Movies;
+
+// TODO:
+
+// Add a selected Movie Panel with state, click handler

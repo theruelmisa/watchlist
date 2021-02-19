@@ -40,6 +40,7 @@ export const Grid = styled.div`
 
 export const MainGrid = styled(Grid)`
     border: 1px solid red;
+    grid-template-columns: repeat(4, 1fr);
 `;
 
 export const Row = styled.div`

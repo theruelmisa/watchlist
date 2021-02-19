@@ -20,7 +20,4 @@ export const LogoText = styled.h1`
     letter-spacing: .5rem;
 `;
 
-export const WelcomeText = styled.h3`
-    font-size: 1.8rem;
-    font-weight: 400;
-`;
+

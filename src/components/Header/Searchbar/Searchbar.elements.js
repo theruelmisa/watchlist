@@ -1,16 +1,17 @@
 import styled from 'styled-components';
-import { Button } from '../../globalStyles';
+import { Button } from '../../../globalStyles';
 
 export const SearchForm = styled.form`
     flex: 0 0 20%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+    margin-right: 3rem;
 
-    border: 1px solid red;
 `;
 
 export const InputField = styled.input`
+    flex: 0 0 80%;
     font-family: inherit;
     font-size: 1.4rem;
     border: none;
@@ -18,14 +19,13 @@ export const InputField = styled.input`
     background-color: #f4f2f2;
     box-shadow: 1px 5px 15px #f0eeee;
     margin-right: -3.5rem;
-    width: 80%;
     padding: .7rem 2rem;
     caret-color: #3c3c3c;
-    transition: width 0.3s ease;
+    transition: flex-basis 0.3s ease;
 
     &:focus {
         outline: none;
-        width:100%;
+        flex-basis:100%;
         background-color: #f0eeee;
     }
     &:focus + button  {
