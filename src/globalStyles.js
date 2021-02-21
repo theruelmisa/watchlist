@@ -20,8 +20,8 @@ const GlobalStyles = createGlobalStyle`
         font-family: 'Open Sans', sans-serif;
         font-weight: 400;
         line-height: 1.4;
-        background: var(--midnight);
-        color: var(--white);
+        background: #fafafa;
+        color: #3c3c3c;
     }
     a { 
         color: inherit;
@@ -34,14 +34,17 @@ const GlobalStyles = createGlobalStyle`
 
 // Containers
 
-export const Grid = styled.div`
+export const MainGrid = styled.div`
     display: grid;
+    grid-template-columns: 100px repeat(3, 1fr);
 `;
 
-export const MainGrid = styled(Grid)`
-    border: 1px solid red;
-    grid-template-columns: repeat(4, 1fr);
+export const PageGrid = styled.div`
+    grid-column: 2 / -1;
+    padding: 5rem 1rem;
+    background: palevioletred;
 `;
+
 
 export const Row = styled.div`
     display: flex;

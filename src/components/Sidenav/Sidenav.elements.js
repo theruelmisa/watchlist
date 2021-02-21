@@ -2,12 +2,14 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const Sidebar = styled.div`
-    flex: 0 0 10%;
+    grid-column: 1 / 2;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
 
-    border: 1px solid red;
+    background: green;
 `;
 
 export const Nav = styled.nav`
@@ -25,7 +27,7 @@ export const MenuItem = styled.li`
     &:not(:last-child) {
         margin-bottom: .5rem;
     } 
-
+/* 
     &::before {
         content: "";
         position: absolute;
@@ -42,7 +44,7 @@ export const MenuItem = styled.li`
     &:hover::before {
         transform: scaleY(1);
         width: 100%;
-    }
+    } */
 `;
 
 export const ItemLink = styled.a`

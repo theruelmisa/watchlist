@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const MoviesContainer = styled.div`
+    grid-column: 2 / -1;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;

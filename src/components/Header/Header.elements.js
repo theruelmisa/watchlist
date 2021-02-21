@@ -2,12 +2,12 @@ import styled from 'styled-components';
 import { Row } from '../../globalStyles';
 
 export const HeaderContainer = styled(Row)`
+    grid-column: 1 / -1;
     width: 100%;
     height: 8vh;
-    margin-bottom: 5rem;
     padding: 0 5rem;
 
-    border: 1px solid red;
+    background: orange;
 `;
 
 export const LogoBox = styled(Row)`

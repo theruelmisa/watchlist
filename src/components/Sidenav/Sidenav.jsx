@@ -9,7 +9,7 @@ import {
 } from './Sidenav.elements';
 
 const menuItems = [
-    "Favorites", "Now Showing", "Upcoming"
+    "Home", "Favorites", "Now Showing", "Upcoming"
 ]
 
 const Sidenav = () => {

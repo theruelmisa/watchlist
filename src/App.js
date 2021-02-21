@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import tmdb, { movieRequests } from './apis/tmdb';
+import { HomePage } from './pages';
 import { Header, Sidenav, Movies } from './components';
 import GlobalStyles, { MainGrid } from './globalStyles';
 
@@ -59,7 +60,8 @@ const App = () => {
             <MainGrid>
                 <Header  searchMovie={ searchMovie }/>
                 <Sidenav />
-                <Movies movies={ movies } handleSaveMovie={ handleSaveMovie } handleRemoveMovie={ handleRemoveMovie } />
+                <HomePage />
+                {/* <Movies movies={ movies } handleSaveMovie={ handleSaveMovie } handleRemoveMovie={ handleRemoveMovie } /> */}
             </MainGrid>
             
         </Router>

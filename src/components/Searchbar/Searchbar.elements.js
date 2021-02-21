@@ -1,17 +1,17 @@
 import styled from 'styled-components';
-import { Button } from '../../../globalStyles';
+import { Button } from '../../globalStyles';
 
 export const SearchForm = styled.form`
     flex: 0 0 20%;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     margin-right: 3rem;
 
 `;
 
 export const InputField = styled.input`
-    flex: 0 0 80%;
+    flex: 0 0 30%;
     font-family: inherit;
     font-size: 1.4rem;
     border: none;
@@ -25,7 +25,7 @@ export const InputField = styled.input`
 
     &:focus {
         outline: none;
-        flex-basis:100%;
+        flex-basis:40%;
         background-color: #f0eeee;
     }
     &:focus + button  {
