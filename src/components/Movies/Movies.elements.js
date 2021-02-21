@@ -7,5 +7,4 @@ export const MoviesContainer = styled.div`
     flex-wrap: wrap;
     padding: 3rem 0;
 
-    border: 1px solid red;
 `;

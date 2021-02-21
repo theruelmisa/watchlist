@@ -36,20 +36,20 @@ const GlobalStyles = createGlobalStyle`
 
 export const MainGrid = styled.div`
     display: grid;
-    grid-template-columns: 100px repeat(3, 1fr);
-`;
+    grid-template-columns: 20rem 1fr;
 
-export const PageGrid = styled.div`
-    grid-column: 2 / -1;
-    padding: 5rem 1rem;
-    background: palevioletred;
 `;
-
 
 export const Row = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+`;
+
+export const Column = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `;
 
 

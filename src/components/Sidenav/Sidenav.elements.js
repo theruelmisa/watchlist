@@ -1,24 +1,34 @@
 import styled from 'styled-components';
+import { Column, Row } from '../../globalStyles';
 import { NavLink } from 'react-router-dom';
 
-export const Sidebar = styled.div`
-    grid-column: 1 / 2;
-    display: flex;
-    flex-direction: column;
+export const Sidebar = styled(Column)`
     justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
+    padding: 1rem 0;
 
-    background: green;
+    border: 1px solid red;
+`;
+
+export const LogoBox = styled(Row)`
+    cursor: pointer;
+`;
+
+export const LogoText = styled.h1`
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: .2rem;
+    margin-top: 1rem;
+    margin-bottom: 5rem;
 `;
 
 export const Nav = styled.nav`
     font-size: 1.5rem;
-    text-align: center;
     list-style: none;
+    width: 100%;
 `;
 
 export const Menu = styled.ul`
+    border: 1px solid red;
 `;
 
 export const MenuItem = styled.li`
@@ -51,12 +61,11 @@ export const ItemLink = styled.a`
     position: relative;
     z-index: 5;
     display: block;
-    padding: 1.5rem 3rem;
+    padding: 1.5rem 0rem;
 
 `;
 
 export const Copyright = styled.p`
     font-size: 1.2rem;
-    text-align: center;
-    padding: 3rem;
+    padding: 1.5rem;
 `;
