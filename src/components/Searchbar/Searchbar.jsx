@@ -19,15 +19,16 @@ const SearchBar = ({ onSearchMovie }) => {
     return (
         <>
             <SearchForm onSubmit={ submitHandler }>
+                <SearchButton type="submit" disabled={term === '' ? true : false}>
+                    <IoSearch />
+                </SearchButton>
                 <InputField 
                     type='text' 
                     value={ term } 
                     onChange={ e => setTerm( e.target.value ) } 
                     placeholder="Search Movies" 
                 />
-                <SearchButton type="submit" disabled={term === '' ? true : false}>
-                    <IoSearch />
-                </SearchButton>
+                
             </SearchForm>
         </>
     )

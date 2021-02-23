@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import tmdb, { movieRequests } from './apis/tmdb';
 import { Sidenav, Searchbar, Movies } from './components';
 import GlobalStyles, { MainGrid } from './globalStyles';
@@ -7,6 +7,7 @@ import GlobalStyles, { MainGrid } from './globalStyles';
 
 const App = () => {
     const [ movies, setMovies ] = useState([]);
+    const [ category, setCategory ] = useState("now showing");
     const [ savedMovies, setSavedMovies ] = useState([]);
 
     useEffect( () => {
@@ -72,6 +73,5 @@ export default App;
 // TODO: 
 
 // REDO EVERY THING
-// 2. Search Results
-// 3. Watchlist
-// 4. Footer 
+// 3. Movies based off categories
+// 4. watchlist

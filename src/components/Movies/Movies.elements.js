@@ -8,3 +8,4 @@ export const MoviesContainer = styled.div`
     padding: 3rem 0;
 
 `;
+

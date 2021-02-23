@@ -20,7 +20,7 @@ const GlobalStyles = createGlobalStyle`
         font-family: 'Open Sans', sans-serif;
         font-weight: 400;
         line-height: 1.4;
-        background: #fafafa;
+        background: orange;
         color: #3c3c3c;
     }
     a { 

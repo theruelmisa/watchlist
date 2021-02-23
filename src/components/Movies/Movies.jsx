@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Movie from './Movie/Movie';
 import { MoviesContainer } from './Movies.elements';
 
 const Movies = ({ movies }) => {
+    const [ selectedMovie, setSelectedMovie ] = useState(movies[0]);
+    
 
     console.log(movies);
 

@@ -11,10 +11,11 @@ import {
 import { Row } from '../../../globalStyles';
 import { IoHeart, IoHeartOutline } from 'react-icons/io5';
 
+
 const Movie = ({ title, vote_average, poster_path, isSaved }) => {
 
     const movieImg = poster_path ? `${ baseImageURL }${ poster_path }`
-    : 'http://via.placeholder.com/2080x2080';
+    : 'https://images.unsplash.com/photo-1542204165-65bf26472b9b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80';
 
     return (
         <MovieContainer>
