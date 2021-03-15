@@ -1,0 +1,53 @@
+For SearchBar
+
+const [ term, setTerm ] = useState('');
+
+    const submitHandler = e => {
+        e.preventDefault();
+
+        onSearchMovie(term);
+        setTerm('');
+    }
+
+
+For Saving to Local Storage
+
+const saveToLocalStorage = items => {
+        localStorage.setItem('watch-list', JSON.stringify(items));
+    }
+
+For Adding and Removing from WatchList
+
+const handleSaveMovie = movie => {
+        
+        const newSavedList = [ ...savedMovies, movie ];
+        setSavedMovies(newSavedList);
+        saveToLocalStorage(newSavedList);
+    }
+
+    const handleRemoveMovie = id => {
+        const filteredSavedMovies = savedMovies.filter( movie => movie.id !== id);
+
+        setSavedMovies(filteredSavedMovies);
+        saveToLocalStorage(filteredSavedMovies);
+    }
+
+
+Fetching and Searching savedMovies
+
+const fetchMovies = async () => {
+        const response = await tmdb.get('/movie/now_playing');
+        setMovies(response.data.results);
+    };
+
+    const searchMovie = async term => {
+        const response = await tmdb.get(movieRequests.searchMovie, {
+            params: {
+                query: term
+            }
+        });
+    
+        setMovies(response.data.results);
+        return response;
+    }
+

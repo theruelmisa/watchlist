@@ -20,7 +20,7 @@ const GlobalStyles = createGlobalStyle`
         font-family: 'Open Sans', sans-serif;
         font-weight: 400;
         line-height: 1.4;
-        background: orange;
+        background: #fafafa;
         color: #3c3c3c;
     }
     a { 
@@ -32,56 +32,7 @@ const GlobalStyles = createGlobalStyle`
     }
 `;
 
-// Containers
 
-export const MainGrid = styled.div`
-    display: grid;
-    grid-template-columns: 20rem 1fr;
-
-`;
-
-export const Row = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-`;
-
-export const Column = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`;
-
-
-// Typography
-
-export const Mainheading = styled.h1`
-    font-size: 2.5rem;
-`;
-
-export const Subheading = styled.h3`
-    font-size: 2rem;
-`;
-
-export const body1 = styled.p`
-    font-size: 1.4rem;
-`;
-
-// Button Styles
-
-export const Button = styled.button`
-    cursor: pointer;
-    padding: 1.2rem 2.2rem;
-    border: none;
-    border-radius: .5rem;
-    font-size: 1.2rem;
-    letter-spacing: .15rem;
-
-    
-    &:active, &:focus {
-        outline: none;
-    }
-`;
 
 
 export default GlobalStyles;
