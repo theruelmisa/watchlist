@@ -12,13 +12,14 @@ const instance = axios.create({
 
 // Movie Requests 
 
-export const movieRequests = {
+export const tmdbRequests = {
     searchMovie: '/search/movie',
     upcomingMovies: '/movie/upcoming',
     nowPlayingMovies: '/movie/now_playing',
     popularMovies: '/movie/popular',
     latestMovies: '/movie/latest',
-    topRatedMovies: '/movie/top_rated'
+    topRatedMovies: '/movie/top_rated',
+    trending: '/trending/movie/week'
 }
 
 export const baseImageURL = 'http://image.tmdb.org/t/p/original';

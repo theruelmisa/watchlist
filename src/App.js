@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import GlobalStyles from './globalStyles';
 import { Header, Sidebar, Movies } from './components';
-import tmdb, { movieRequests } from './apis/tmdb';
+import tmdb, { tmdbRequests } from './apis/tmdb';
 
 
 const App = () => {
@@ -10,40 +10,41 @@ const App = () => {
     const [savedMovies, setSavedMovies] = useState([]);
 
     const handleSearchMovie = async term => {
-        const response = await tmdb.get(movieRequests.searchMovie, {
+        const { data } = await tmdb.get(tmdbRequests.searchMovie, {
             params: {
                 query: term
             }
         });
 
-        setMovies(response.data.results);
+        setMovies(data.results);
     }
 
-    console.log(movies)
 
     return (
         <>
             <Router>
                 <GlobalStyles />
                 <Header handleSearchMovie={handleSearchMovie} />
-                <Sidebar />
-                <Switch>
-                    <Route exact path="/">
-                        <Movies title="Trending" fetchUrl={movieRequests.popularMovies} movies={movies}/>
-                    </Route>
-                    <Route exact path="/favorites" movies={savedMovies}>
-                        <Movies title="Favorites" />
-                    </Route>
-                    <Route exact path="/upcoming">
-                        <Movies title="Upcoming" />
-                    </Route>
-                    <Route exact path="/top-rated">
-                        <Movies title="Top Rated" />
-                    </Route>
-                    <Route exact path="/now-showing">
-                        <Movies title="Now Showing" />
-                    </Route>
-                </Switch>
+                <div style={{ display: 'flex'}}>
+                    <Sidebar />
+                    <Switch>
+                        <Route exact path="/">
+                            <Movies title="Trending" fetchUrl={tmdbRequests.trending} movies={movies} onSetMovies={setMovies}/>
+                        </Route>
+                        <Route exact path="/favorites" movies={savedMovies}>
+                            <Movies title="Favorites" />
+                        </Route>
+                        <Route exact path="/upcoming">
+                            <Movies title="Upcoming" fetchUrl={tmdbRequests.upcomingMovies} movies={movies} onSetMovies={setMovies}/>
+                        </Route>
+                        <Route exact path="/top-rated">
+                            <Movies title="Top Rated" fetchUrl={tmdbRequests.topRatedMovies} movies={movies} onSetMovies={setMovies}/>
+                        </Route>
+                        <Route exact path="/now-showing">
+                            <Movies title="Now Showing" fetchUrl={tmdbRequests.nowPlayingMovies} movies={movies} onSetMovies={setMovies}/>
+                        </Route>
+                    </Switch>
+                </div>
             </Router>
         </>
     )
