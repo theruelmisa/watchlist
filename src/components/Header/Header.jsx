@@ -2,11 +2,11 @@ import React from 'react'
 import Searchbar from './Searchbar/Searchbar';
 import { HeaderContainer, Logo } from './Header.elements';
 
-const Header = () => {
+const Header = ({ handleSearchMovie }) => {
     return (
         <HeaderContainer>
             <Logo>WatchList</Logo>
-            <Searchbar />
+            <Searchbar onSearchMovie={handleSearchMovie} />
         </HeaderContainer>
     )
 };

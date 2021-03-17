@@ -1,6 +1,7 @@
 import React from 'react'
 import { SidebarContainer } from './Sidebar.elements';
 import { NavLink } from 'react-router-dom';
+import { } from 'react-icons/'
 
 const Sidebar = () => {
     return (

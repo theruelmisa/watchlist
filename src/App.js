@@ -1,22 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import GlobalStyles from './globalStyles';
 import { Header, Sidebar, Movies } from './components';
+import tmdb, { movieRequests } from './apis/tmdb';
 
 
 const App = () => {
+    const [movies, setMovies] = useState([]);
+    const [savedMovies, setSavedMovies] = useState([]);
+
+    const handleSearchMovie = async term => {
+        const response = await tmdb.get(movieRequests.searchMovie, {
+            params: {
+                query: term
+            }
+        });
+
+        setMovies(response.data.results);
+    }
+
+    console.log(movies)
 
     return (
         <>
             <Router>
                 <GlobalStyles />
-                <Header />
+                <Header handleSearchMovie={handleSearchMovie} />
                 <Sidebar />
                 <Switch>
                     <Route exact path="/">
-                        <Movies title="Trending" />
+                        <Movies title="Trending" fetchUrl={movieRequests.popularMovies} movies={movies}/>
                     </Route>
-                    <Route exact path="/favorites">
+                    <Route exact path="/favorites" movies={savedMovies}>
                         <Movies title="Favorites" />
                     </Route>
                     <Route exact path="/upcoming">

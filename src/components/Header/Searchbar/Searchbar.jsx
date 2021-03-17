@@ -5,7 +5,6 @@ const Searchbar = ({onSearchMovie}) => {
 
     const submitHandler = e => {
         e.preventDefault();
-        console.log(term)
         onSearchMovie(term);
         setTerm('');
     }
