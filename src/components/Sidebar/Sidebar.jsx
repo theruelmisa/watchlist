@@ -12,20 +12,20 @@ const Sidebar = () => {
         <SidebarContainer>
             <NavMenu>
                 <NavItem>
-                    <NavLinks to="/">Trending</NavLinks>
+                    <NavLinks exact to="/">Trending</NavLinks>
                 </NavItem>
                 <NavItem>
-                    <NavLinks to="/now-showing">Now Showing</NavLinks>
+                    <NavLinks exact to="/now-showing">Now Showing</NavLinks>
                 </NavItem>
                 <NavItem>
-                    <NavLinks to="/upcoming">Upcoming</NavLinks>
+                    <NavLinks exact to="/upcoming">Upcoming</NavLinks>
                 </NavItem>
                 <NavItem>
-                    <NavLinks to="/top-rated">Top Rated</NavLinks>
+                    <NavLinks exact to="/top-rated">Top Rated</NavLinks>
                 </NavItem>
-                <NavItem>
+                {/* <NavItem>
                     <NavLinks to="/favorites">Favorites</NavLinks>
-                </NavItem>
+                </NavItem> */}
             </NavMenu>
         </SidebarContainer>
     )

@@ -28,4 +28,8 @@ export const NavLinks = styled(NavLink)`
         color: white;
         background-color: black;
     }
+
+    &.active {
+        background-color: orange;
+    }
 `;

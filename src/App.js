@@ -19,7 +19,6 @@ const App = () => {
         setMovies(data.results);
     }
 
-
     return (
         <>
             <Router>
@@ -28,9 +27,7 @@ const App = () => {
                 <div style={{ display: 'flex'}}>
                     <Sidebar />
                     <Switch>
-                        <Route exact path="/">
-                            <Movies title="Trending" fetchUrl={tmdbRequests.trending} movies={movies} onSetMovies={setMovies}/>
-                        </Route>
+                        
                         <Route exact path="/favorites" movies={savedMovies}>
                             <Movies title="Favorites" />
                         </Route>
@@ -42,6 +39,9 @@ const App = () => {
                         </Route>
                         <Route exact path="/now-showing">
                             <Movies title="Now Showing" fetchUrl={tmdbRequests.nowPlayingMovies} movies={movies} onSetMovies={setMovies}/>
+                        </Route>
+                        <Route exact path="/">
+                            <Movies title="Trending" fetchUrl={tmdbRequests.trending} movies={movies} onSetMovies={setMovies}/>
                         </Route>
                     </Switch>
                 </div>
