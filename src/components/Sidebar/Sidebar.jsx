@@ -1,28 +1,32 @@
 import React from 'react'
-import { SidebarContainer } from './Sidebar.elements';
-import { NavLink } from 'react-router-dom';
+import { 
+    SidebarContainer,
+    NavMenu,
+    NavItem,
+    NavLinks
+} from './Sidebar.elements';
 import { } from 'react-icons/'
 
 const Sidebar = () => {
     return (
         <SidebarContainer>
-            <ul>
-                <li>
-                    <NavLink to="/">Trending</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/favorites">Favorites</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/now-showing">Now Showing</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/upcoming">Upcoming</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/top-rated">Top Rated</NavLink>
-                </li>
-            </ul>
+            <NavMenu>
+                <NavItem>
+                    <NavLinks to="/">Trending</NavLinks>
+                </NavItem>
+                <NavItem>
+                    <NavLinks to="/now-showing">Now Showing</NavLinks>
+                </NavItem>
+                <NavItem>
+                    <NavLinks to="/upcoming">Upcoming</NavLinks>
+                </NavItem>
+                <NavItem>
+                    <NavLinks to="/top-rated">Top Rated</NavLinks>
+                </NavItem>
+                <NavItem>
+                    <NavLinks to="/favorites">Favorites</NavLinks>
+                </NavItem>
+            </NavMenu>
         </SidebarContainer>
     )
 }
