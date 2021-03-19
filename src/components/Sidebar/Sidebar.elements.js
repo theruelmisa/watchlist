@@ -13,8 +13,19 @@ export const NavMenu = styled.ul`
 
 export const NavItem = styled.li`
     border: 1px solid red;
+    display: flex;
+    align-items: center;
 `;
 
 export const NavLinks = styled(NavLink)`
-    border: 1px solid red;
+    display: inline-block;
+    width: 100%;
+    padding: 2rem;
+    text-align: center;
+    font-size: 1.2rem;
+
+    &:hover {
+        color: white;
+        background-color: black;
+    }
 `;
