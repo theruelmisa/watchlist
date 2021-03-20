@@ -2,27 +2,30 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const SidebarContainer = styled.div`
-    border: 1px solid red;
     width: 10%;
     height: 100vh;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
 `;
 
 export const NavMenu = styled.ul`
-    border: 1px solid red;
 `;
 
 export const NavItem = styled.li`
-    border: 1px solid red;
-    display: flex;
-    align-items: center;
+    border-bottom: 1px solid #ccc;
 `;
 
 export const NavLinks = styled(NavLink)`
-    display: inline-block;
+    display: flex;
+    align-items: center;
     width: 100%;
-    padding: 2rem;
-    text-align: center;
+    padding: 2rem 3rem;
     font-size: 1.2rem;
+
+    & > svg {
+        font-size: 2rem;
+        margin-right: 1rem;
+    }
 
     &:hover {
         color: white;
