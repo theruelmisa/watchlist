@@ -10,6 +10,7 @@ import { IoFilm, IoFlame, IoHeart, IoStar, IoPaperPlane } from 'react-icons/io5'
 const Sidebar = () => {
     return (
         <SidebarContainer>
+            <h1>Watchlist Logo</h1>
             <NavMenu>
                 <NavItem>
                     <NavLinks exact to="/">
@@ -35,13 +36,8 @@ const Sidebar = () => {
                         Top Rated
                     </NavLinks>
                 </NavItem>
-                {/* <NavItem>
-                    <NavLinks to="/favorites">
-                        <IoHeart />
-                        Favorites
-                    </NavLinks>
-                </NavItem> */}
             </NavMenu>
+            <p>Copyright here</p>
         </SidebarContainer>
     )
 }
