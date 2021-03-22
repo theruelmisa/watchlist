@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Form, InputGroup, TextField, SearchButton } from './Searchbar.elements';
 
 const Searchbar = ({onSearchMovie}) => {
     const [term, setTerm] = useState("");
@@ -10,10 +11,12 @@ const Searchbar = ({onSearchMovie}) => {
     }
 
     return ( 
-        <form onSubmit={submitHandler}>
-            <input type="text" value={term} onChange={e => setTerm(e.target.value)}/>
-            <button>Search Movies</button>
-        </form>
+        <Form onSubmit={submitHandler}>
+            <InputGroup>
+                <TextField type="text" value={term} onChange={e => setTerm(e.target.value)}/>
+                <SearchButton>Search Movies</SearchButton>
+            </InputGroup>
+        </Form>
     );
 }
 

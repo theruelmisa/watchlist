@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import GlobalStyles from './globalStyles';
+import GlobalStyles, { MainContainer } from './globalStyles';
 import { Sidebar, Searchbar, Movies } from './components';
 import tmdb, { tmdbRequests } from './apis/tmdb';
 
@@ -23,7 +23,7 @@ const App = () => {
         <>
             <Router>
                 <GlobalStyles />
-                <div style={{ display: 'flex'}}>
+                <MainContainer>
                     <Sidebar />
                     <div>
                         <Searchbar onSearchMovie={handleSearchMovie}/>
@@ -48,7 +48,7 @@ const App = () => {
                     <div>
                         <h1>Favorite movies here</h1>
                     </div>
-                </div>
+                </MainContainer>
             </Router>
         </>
     )

@@ -32,6 +32,12 @@ const GlobalStyles = createGlobalStyle`
     }
 `;
 
+export const MainContainer = styled.div`
+    display: grid;
+    grid-template-columns: max-content 1fr 25rem;
+    grid-gap: 2rem;
+`;
+
 
 
 
