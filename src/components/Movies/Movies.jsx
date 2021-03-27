@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { MoviesContainer, MovieList } from './Movies.elements';
-import tmdb from '../../apis/tmdb';
+import tmdb, { baseImageURL } from '../../apis/tmdb';
 
 const Movies = ({ title, fetchUrl, movies, onSetMovies, favorites, onSetSavedMovies }) => {
 
@@ -24,7 +24,10 @@ const Movies = ({ title, fetchUrl, movies, onSetMovies, favorites, onSetSavedMov
             <MovieList>
                 {
                 movies && movies.map( movie => (
-                    <h3 key={movie.id}>{movie.title}</h3>
+                    <div key={movie.id}>
+                        <img src={`${baseImageURL}/${movie.poster_path}`} alt={movie.title} />
+                        <h3 key={movie.id}>{movie.title}</h3>
+                    </div>
                 ))
                 }
             </MovieList>
