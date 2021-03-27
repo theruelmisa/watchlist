@@ -16,18 +16,22 @@ export const InputGroup = styled.div`
     padding: 1rem;
     font-size: 2rem;
     position: relative;
-    border: 1px solid red;
 `;
 
 export const TextField = styled.input`
     width: 100%;
     border: 1px solid #ccc;
     border-radius: 10rem;
-    padding: .5rem 1rem;
+    padding: 1rem;
     padding-left: 3.5rem;
+    font-size: 1.4rem;
+    caret-color: #3c3c3c;
+    color: #3c3c3c;
+    font-family: inherit;
 
     &:focus {
         outline: none;
+        box-shadow: 2px 3px 3px rgba(0, 0, 0, .2);
     }
 `;
 
