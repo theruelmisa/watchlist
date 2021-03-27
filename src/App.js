@@ -28,9 +28,6 @@ const App = () => {
                     <div>
                         <Searchbar onSearchMovie={handleSearchMovie}/>
                         <Switch>
-                            {/* <Route exact path="/favorites" movies={savedMovies}>
-                                <Movies title="Favorites" />
-                            </Route> */}
                             <Route exact path="/upcoming">
                                 <Movies title="Upcoming" fetchUrl={tmdbRequests.upcomingMovies} movies={movies} onSetMovies={setMovies}/>
                             </Route>
@@ -45,9 +42,7 @@ const App = () => {
                             </Route>
                         </Switch>
                     </div>
-                    <div>
-                        <h1>Favorite movies here</h1>
-                    </div>
+                    <Movies title="Favorites" movies={savedMovies} onSetSavedMovies={setSavedMovies} favorites />
                 </MainContainer>
             </Router>
         </>

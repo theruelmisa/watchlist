@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import tmdb from '../../apis/tmdb';
 
-const Movies = ({ title, fetchUrl, movies, onSetMovies }) => {
+const Movies = ({ title, fetchUrl, movies, onSetMovies, favorites, onSetSavedMovies }) => {
 
     useEffect(() => {
-        fetchMovies();
+        if (!favorites) {
+            fetchMovies();
+        }
     }, [fetchUrl]);
 
     const fetchMovies = async () => {
