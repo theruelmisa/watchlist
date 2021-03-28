@@ -25,7 +25,7 @@ const Movies = ({ title, fetchUrl, movies, onSetMovies, favorites, onSetSavedMov
             <MovieList>
                 {
                 movies && movies.map( movie => (
-                    <Movie key={movie.id} movie={movie} />
+                    <Movie key={movie.id} movie={movie}/>
                 ))
                 }
             </MovieList>
