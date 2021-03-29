@@ -1,5 +1,5 @@
 import React from 'react';
-import { Poster, PosterImg } from './Movie.elements';
+import { Poster, PosterImg, MovieDetails } from './Movie.elements';
 import { baseImageURL } from '../../../apis/tmdb';
 
 const Movie = ({movie}) => {
@@ -8,7 +8,9 @@ const Movie = ({movie}) => {
     return(
         <Poster>
             <PosterImg src={`${baseImageURL}/${movie.poster_path}`} alt={movie.title} />
-            <h3>{movie.title}</h3>
+            <MovieDetails>
+                <h3>{movie.title}</h3>
+            </MovieDetails>
         </Poster>
     ) 
 }
