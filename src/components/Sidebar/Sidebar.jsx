@@ -1,16 +1,25 @@
 import React from 'react'
 import { 
     SidebarContainer,
+    LogoBox,
+    LogoText,
     NavMenu,
     NavItem,
-    NavLinks
+    NavLinks,
+    Copyright,
+    CopyText
 } from './Sidebar.elements';
 import { IoFilm, IoFlame, IoHeart, IoStar, IoPaperPlane } from 'react-icons/io5';
 
 const Sidebar = () => {
+
+
+
     return (
         <SidebarContainer>
-            <h1>Watchlist Logo</h1>
+            <LogoBox>
+                <LogoText>Watchlist</LogoText>
+            </LogoBox>
             <NavMenu>
                 <NavItem>
                     <NavLinks exact to="/">
@@ -37,7 +46,11 @@ const Sidebar = () => {
                     </NavLinks>
                 </NavItem>
             </NavMenu>
-            <p>Copyright here</p>
+            <Copyright>
+                <CopyText>
+                    Watchlist &copy; {new Date().getFullYear()} | Powered by RM! 
+                </CopyText>
+            </Copyright>
         </SidebarContainer>
     )
 }

@@ -7,7 +7,27 @@ export const SidebarContainer = styled.div`
     border-right: 1px solid #ccc;
 `;
 
+export const LogoBox = styled.div`
+    padding: 1rem;
+    margin-bottom: 3rem;
+    text-align: center;
+`;
+
+export const LogoText = styled.h1`
+    padding: 1rem 0;
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: .3rem;
+
+    &::first-letter {
+        font-weight: 700;
+        font-size: 4rem;
+        color: orange;
+    }
+`;
+
 export const NavMenu = styled.ul`
+    margin-bottom: 5rem;
 `;
 
 export const NavItem = styled.li`
@@ -34,4 +54,14 @@ export const NavLinks = styled(NavLink)`
     &.active {
         background-color: orange;
     }
+`;
+
+export const Copyright = styled.div`
+    padding: 2rem 1rem;
+    text-align: center;    
+`;
+
+export const CopyText = styled.p`
+    font-size: 1.2rem;
+    font-weight: 700;
 `;
