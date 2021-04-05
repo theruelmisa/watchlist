@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import GlobalStyles, { MainContainer } from './globalStyles';
 import { Sidebar, Searchbar, Movies } from './components';
