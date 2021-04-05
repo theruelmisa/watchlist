@@ -51,9 +51,3 @@ const App = () => {
 
 export default App;
 
-// TODO: 
-
-// REDO EVERY THING
-// 2. Add more to tool bar such as welcome guest text
-// 3. Movies based off categories
-// 4. watchlist

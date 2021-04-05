@@ -51,3 +51,163 @@ const fetchMovies = async () => {
         return response;
     }
 
+// OLD CODE
+
+App.js  
+
+const App = () => {
+    const [movies, setMovies] = useState([]);
+    const [savedMovies, setSavedMovies] = useState([]);
+
+    const handleSearchMovie = async term => {
+        const { data } = await tmdb.get(tmdbRequests.searchMovie, {
+            params: {
+                query: term
+            }
+        });
+
+        setMovies(data.results);
+    }
+
+    return (
+        <>
+            <Router>
+                <GlobalStyles />
+                <MainContainer>
+                    <Sidebar />
+                    <div>
+                        <Searchbar onSearchMovie={handleSearchMovie}/>
+                        <Switch>
+                            <Route exact path="/upcoming">
+                                <Movies title="Upcoming" fetchUrl={tmdbRequests.upcomingMovies} movies={movies} onSetMovies={setMovies}/>
+                            </Route>
+                            <Route exact path="/top-rated">
+                                <Movies title="Top Rated" fetchUrl={tmdbRequests.topRatedMovies} movies={movies} onSetMovies={setMovies}/>
+                            </Route>
+                            <Route exact path="/now-showing">
+                                <Movies title="Now Showing" fetchUrl={tmdbRequests.nowPlayingMovies} movies={movies} onSetMovies={setMovies}/>
+                            </Route>
+                            <Route exact path="/">
+                                <Movies title="Trending" fetchUrl={tmdbRequests.trending} movies={movies} onSetMovies={setMovies}/>
+                            </Route>
+                        </Switch>
+                    </div>
+                    <Movies title="Favorites" movies={savedMovies} onSetSavedMovies={setSavedMovies} favorites />
+                </MainContainer>
+            </Router>
+        </>
+    )
+};
+
+Sidebar
+
+import { IoFilm, IoFlame, IoHeart, IoStar, IoPaperPlane } from 'react-icons/io5';
+
+const Sidebar = () => {
+    return (
+        <SidebarContainer>
+            <h1>Watchlist Logo</h1>
+            <NavMenu>
+                <NavItem>
+                    <NavLinks exact to="/">
+                        <IoFlame />
+                        Trending
+                    </NavLinks>
+                </NavItem>
+                <NavItem>
+                    <NavLinks exact to="/now-showing">
+                        <IoFilm />
+                        Now Showing
+                    </NavLinks>
+                </NavItem>
+                <NavItem>
+                    <NavLinks exact to="/upcoming">
+                        <IoPaperPlane />
+                        Upcoming
+                    </NavLinks>
+                </NavItem>
+                <NavItem>
+                    <NavLinks exact to="/top-rated">
+                        <IoStar />
+                        Top Rated
+                    </NavLinks>
+                </NavItem>
+            </NavMenu>
+            <p>Copyright here</p>
+        </SidebarContainer>
+    )
+}
+
+Searchbar
+
+const Searchbar = ({onSearchMovie}) => {
+    const [term, setTerm] = useState("");
+
+    const submitHandler = e => {
+        e.preventDefault();
+        onSearchMovie(term);
+        setTerm('');
+    }
+
+    return ( 
+        <Form onSubmit={submitHandler}>
+            <InputGroup>
+                <TextField type="text" value={term} onChange={e => setTerm(e.target.value)}/>
+                <SearchButton>Search Movies</SearchButton>
+            </InputGroup>
+        </Form>
+    );
+}
+
+Movies.js 
+
+const Movies = ({ title, fetchUrl, movies, onSetMovies, favorites, onSetSavedMovies }) => {
+
+    useEffect(() => {
+        if (!favorites) {
+            fetchMovies();
+        }
+    }, [fetchUrl]);
+
+    const fetchMovies = async () => {
+        const { data } = await tmdb.get(fetchUrl);
+        onSetMovies(data.results);
+    };
+
+    console.log(movies);
+
+
+    return (
+        <MoviesContainer>
+            <h1>{title}</h1>
+            <MovieList>
+                {
+                movies && movies.map( movie => (
+                    <Movie key={movie.id} movie={movie}/>
+                ))
+                }
+            </MovieList>
+        </MoviesContainer>
+    )
+}
+
+export default Movies;
+
+Movie.js  
+
+import { baseImageURL } from '../../../apis/tmdb';
+
+const Movie = ({movie}) => {
+    // vote_average
+    console.log(movie)
+    return(
+        <Poster>
+            <PosterImg src={`${baseImageURL}/${movie.poster_path}`} alt={movie.title} />
+            <MovieDetails>
+                <h3>{movie.title}</h3>
+            </MovieDetails>
+        </Poster>
+    ) 
+}
+
+export default Movie;
