@@ -1,5 +1,13 @@
 import React from 'react';
-import { MovieCard, Poster, PosterImg, CardDetails, CardText, CardControls } from './Movie.elements';
+import { 
+    MovieCard, 
+    Poster, 
+    PosterImg, 
+    CardDetails, 
+    CardText, 
+    CardControls,
+    Button, 
+} from './Movie.elements';
 import { baseImageURL } from '../../../apis/tmdb';
 
 const Movie = ({movie, savedMovies, onSaveMovie, onRemoveMovie}) => {
@@ -17,8 +25,8 @@ const Movie = ({movie, savedMovies, onSaveMovie, onRemoveMovie}) => {
                     <p>{movie.vote_average}</p>
                 </CardText>
                 <CardControls>
-                    <button>Save</button>
-                    <button>Remove</button>
+                    <Button>Save</Button>
+                    <Button>Remove</Button>
                 </CardControls>
             </CardDetails>
         </MovieCard>

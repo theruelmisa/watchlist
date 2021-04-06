@@ -34,4 +34,13 @@ export const CardText = styled.div`
 
 export const CardControls = styled.div`
     border: 1px solid red;
+    padding: 1rem;
 `;
+
+export const Button = styled.button`
+
+    &:first-of-type {
+        margin-right: 1rem;
+    }
+`;
+
