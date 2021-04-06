@@ -1,21 +1,28 @@
 import React from 'react';
-import { Poster, PosterImg, MovieDetails } from './Movie.elements';
+import { MovieCard, Poster, PosterImg, CardDetails, CardText, CardControls } from './Movie.elements';
 import { baseImageURL } from '../../../apis/tmdb';
 
 const Movie = ({movie, savedMovies, onSaveMovie, onRemoveMovie}) => {
     // vote_average
     console.log(movie)
     return(
-        <Poster>
-            <PosterImg src={`${baseImageURL}/${movie.poster_path}`} alt={movie.title} />
-            <div>
-                <MovieDetails>
+        <MovieCard>
+            <Poster>
+                <PosterImg src={`${baseImageURL}/${movie.poster_path}`} alt={movie.title} />
+            </Poster>
+        
+            <CardDetails>
+                <CardText>
                     <h3>{movie.title}</h3>
                     <p>{movie.vote_average}</p>
-                </MovieDetails>
-            </div>
+                </CardText>
+                <CardControls>
+                    <button>Save</button>
+                    <button>Remove</button>
+                </CardControls>
+            </CardDetails>
+        </MovieCard>
             
-        </Poster>
     ) 
 }
 

@@ -7,6 +7,6 @@ export const MoviesContainer = styled.div`
 export const MovieList = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem;
+    grid-gap: 2.5rem;
     border: 1px solid red;
 `;
