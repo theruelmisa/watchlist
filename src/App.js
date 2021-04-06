@@ -19,6 +19,24 @@ const App = () => {
         setMovies(data.results);
     }
 
+    const saveToLocalStorage = items => {
+        localStorage.setItem('watch-list', JSON.stringify(items));
+    }
+
+    const handleSaveMovie = movie => {
+        
+        const newSavedList = [ ...savedMovies, movie ];
+        setSavedMovies(newSavedList);
+        saveToLocalStorage(newSavedList);
+    }
+
+    const handleRemoveMovie = id => {
+        const filteredSavedMovies = savedMovies.filter( movie => movie.id !== id);
+
+        setSavedMovies(filteredSavedMovies);
+        saveToLocalStorage(filteredSavedMovies);
+    }
+
     return (
         <>
             <Router>
@@ -29,20 +47,52 @@ const App = () => {
                         <Searchbar onSearchMovie={handleSearchMovie}/>
                         <Switch>
                             <Route exact path="/upcoming">
-                                <Movies title="Upcoming" fetchUrl={tmdbRequests.upcomingMovies} movies={movies} onSetMovies={setMovies}/>
+                                <Movies 
+                                    title="Upcoming" 
+                                    fetchUrl={tmdbRequests.upcomingMovies} 
+                                    movies={movies}
+                                    savedMovies={savedMovies} 
+                                    onSetMovies={setMovies} 
+                                    handleSaveMovie={handleSaveMovie} 
+                                    handleRemoveMovie={handleRemoveMovie} 
+                                />
                             </Route>
                             <Route exact path="/top-rated">
-                                <Movies title="Top Rated" fetchUrl={tmdbRequests.topRatedMovies} movies={movies} onSetMovies={setMovies}/>
+                                <Movies 
+                                    title="Top Rated" 
+                                    fetchUrl={tmdbRequests.topRatedMovies} 
+                                    movies={movies}
+                                    savedMovies={savedMovies} 
+                                    onSetMovies={setMovies} 
+                                    handleSaveMovie={handleSaveMovie} 
+                                    handleRemoveMovie={handleRemoveMovie}
+                                />
                             </Route>
                             <Route exact path="/now-showing">
-                                <Movies title="Now Showing" fetchUrl={tmdbRequests.nowPlayingMovies} movies={movies} onSetMovies={setMovies}/>
+                                <Movies 
+                                    title="Now Showing" 
+                                    fetchUrl={tmdbRequests.nowPlayingMovies} 
+                                    movies={movies}
+                                    savedMovies={savedMovies} 
+                                    onSetMovies={setMovies} 
+                                    handleSaveMovie={handleSaveMovie} 
+                                    handleRemoveMovie={handleRemoveMovie}
+                                />
                             </Route>
                             <Route exact path="/">
-                                <Movies title="Trending" fetchUrl={tmdbRequests.trending} movies={movies} onSetMovies={setMovies}/>
+                                <Movies 
+                                    title="Trending" 
+                                    fetchUrl={tmdbRequests.trending} 
+                                    movies={movies}
+                                    savedMovies={savedMovies} 
+                                    onSetMovies={setMovies} 
+                                    handleSaveMovie={handleSaveMovie} 
+                                    handleRemoveMovie={handleRemoveMovie}
+                                />
                             </Route>
                         </Switch>
                     </div>
-                    <Movies title="Favorites" movies={savedMovies} onSetSavedMovies={setSavedMovies} favorites />
+                    <Movies title="Favorites" movies={savedMovies}  handleRemoveMovie={handleRemoveMovie} favorites />
                 </MainContainer>
             </Router>
         </>

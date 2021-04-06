@@ -36,6 +36,7 @@ export const MainContainer = styled.div`
     display: grid;
     grid-template-columns: 20rem 1fr 25rem;
     grid-gap: 2rem;
+    
 `;
 
 

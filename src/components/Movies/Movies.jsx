@@ -3,7 +3,7 @@ import { MoviesContainer, MovieList } from './Movies.elements';
 import Movie from './Movie/Movie';
 import tmdb from '../../apis/tmdb';
 
-const Movies = ({ title, fetchUrl, movies, onSetMovies, favorites, onSetSavedMovies }) => {
+const Movies = ({ title, fetchUrl, movies, onSetMovies, favorites, savedMovies, handleSaveMovie, handleRemoveMovie }) => {
 
     useEffect(() => {
         if (!favorites) {
@@ -25,7 +25,13 @@ const Movies = ({ title, fetchUrl, movies, onSetMovies, favorites, onSetSavedMov
             <MovieList>
                 {
                 movies && movies.map( movie => (
-                    <Movie key={movie.id} movie={movie}/>
+                    <Movie 
+                        key={movie.id} 
+                        movie={movie}
+                        savedMovies={savedMovies}
+                        onSaveMovie={handleSaveMovie}
+                        onRemoveMovie={handleRemoveMovie}
+                    />
                 ))
                 }
             </MovieList>
