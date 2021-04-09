@@ -12,7 +12,7 @@ import {
 import { baseImageURL } from '../../../apis/tmdb';
 
 const Movie = ({movie, savedMovies, onSaveMovie, onRemoveMovie}) => {
-    console.log(movie)
+
     return(
         <MovieCard>
             <Poster>
@@ -25,8 +25,8 @@ const Movie = ({movie, savedMovies, onSaveMovie, onRemoveMovie}) => {
                     <p>{movie.vote_average}</p>
                 </CardText>
                 <CardControls>
-                    <SaveButton type="click" >Save</SaveButton>
-                    <RemoveButton type="click" >Remove</RemoveButton>
+                    <SaveButton type="click" onClick={() => onSaveMovie(movie)} >Save</SaveButton>
+                    <RemoveButton type="click" onClick={() => onRemoveMovie(movie.id)} >Remove</RemoveButton>
                 </CardControls>
             </CardDetails>
         </MovieCard>
