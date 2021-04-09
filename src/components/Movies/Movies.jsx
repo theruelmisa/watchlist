@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { MoviesContainer, MovieList } from './Movies.elements';
+import { MoviesContainer, MovieList, CategoryName } from './Movies.elements';
 import Movie from './Movie/Movie';
 import tmdb from '../../apis/tmdb';
 
@@ -21,7 +21,7 @@ const Movies = ({ title, fetchUrl, movies, onSetMovies, favorites, savedMovies, 
 
     return (
         <MoviesContainer>
-            <h1>{title}</h1>
+            <CategoryName>{title}</CategoryName>
             <MovieList>
                 {
                 movies && movies.map( movie => (
