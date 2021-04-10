@@ -6,9 +6,7 @@ import tmdb from '../../apis/tmdb';
 const Movies = ({ title, fetchUrl, movies, onSetMovies, favorites, savedMovies, handleSaveMovie, handleRemoveMovie }) => {
 
     useEffect(() => {
-        if (!favorites) {
-            fetchMovies();
-        }
+        fetchMovies();
     }, [fetchUrl]);
 
     const fetchMovies = async () => {
@@ -16,7 +14,6 @@ const Movies = ({ title, fetchUrl, movies, onSetMovies, favorites, savedMovies, 
         onSetMovies(data.results);
     };
 
-    console.log(movies);
 
 
     return (

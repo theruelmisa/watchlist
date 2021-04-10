@@ -25,8 +25,11 @@ const Movie = ({movie, savedMovies, onSaveMovie, onRemoveMovie, favorites}) => {
                     <p>{movie.vote_average}</p>
                 </CardText>
                 <CardControls>
+                    
                     {
-                        !favorites && <SaveButton type="click" onClick={() => onSaveMovie(movie)} >Save</SaveButton>
+                        (!favorites && !(savedMovies.includes(movie)) && 
+                            <SaveButton type="click" onClick={() => onSaveMovie(movie)} >Save</SaveButton>
+                        )
                     }
                     <RemoveButton type="click" onClick={() => onRemoveMovie(movie.id)} >Remove</RemoveButton>
                 </CardControls>
