@@ -14,7 +14,7 @@ import { baseImageURL } from '../../../apis/tmdb';
 const Movie = ({movie, savedMovies, onSaveMovie, onRemoveMovie, favorites}) => {
 
     return(
-        <MovieCard>
+        <MovieCard favorites={favorites}>
             <Poster>
                 <PosterImg src={`${baseImageURL}/${movie.poster_path}`} alt={movie.title} />
             </Poster>

@@ -3,7 +3,7 @@ import { MoviesContainer, MovieList, CategoryName } from './Movies.elements';
 import Movie from './Movie/Movie';
 import tmdb from '../../apis/tmdb';
 
-const Movies = ({ title, fetchUrl, movies, onSetMovies, favorites, savedMovies, handleSaveMovie, handleRemoveMovie }) => {
+const Movies = ({ title, fetchUrl, movies, onSetMovies, savedMovies, handleSaveMovie, handleRemoveMovie }) => {
 
     useEffect(() => {
         fetchMovies();

@@ -4,6 +4,11 @@ export const MovieCard = styled.div`
     padding: 1.5rem;
     border: 1px solid #ccc;
     box-shadow: 2px 3px 5px rgba(0, 0, 0, .2);
+
+    ${({ favorites }) => favorites && `
+        display: flex;
+        align-items: center;
+    `};
 `;
 
 export const Poster = styled.div`
