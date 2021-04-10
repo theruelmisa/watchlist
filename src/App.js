@@ -1,7 +1,7 @@
 import React, { useState, Suspense } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import GlobalStyles, { MainContainer } from './globalStyles';
-import { Sidebar, Searchbar, Movies } from './components';
+import { Sidebar, Searchbar, Favorites, Movies } from './components';
 import tmdb, { tmdbRequests } from './apis/tmdb';
 
 
@@ -92,7 +92,7 @@ const App = () => {
                             </Route>
                         </Switch>
                     </div>
-                    <Movies title="Favorites" movies={savedMovies}  handleRemoveMovie={handleRemoveMovie} favorites />
+                    <Favorites savedMovies={savedMovies}  handleRemoveMovie={handleRemoveMovie} favorites />
                 </MainContainer>
             </Router>
         </>

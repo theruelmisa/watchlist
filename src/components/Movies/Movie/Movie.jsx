@@ -11,7 +11,7 @@ import {
 } from './Movie.elements';
 import { baseImageURL } from '../../../apis/tmdb';
 
-const Movie = ({movie, savedMovies, onSaveMovie, onRemoveMovie}) => {
+const Movie = ({movie, savedMovies, onSaveMovie, onRemoveMovie, favorites}) => {
 
     return(
         <MovieCard>
@@ -25,7 +25,9 @@ const Movie = ({movie, savedMovies, onSaveMovie, onRemoveMovie}) => {
                     <p>{movie.vote_average}</p>
                 </CardText>
                 <CardControls>
-                    <SaveButton type="click" onClick={() => onSaveMovie(movie)} >Save</SaveButton>
+                    {
+                        !favorites && <SaveButton type="click" onClick={() => onSaveMovie(movie)} >Save</SaveButton>
+                    }
                     <RemoveButton type="click" onClick={() => onRemoveMovie(movie.id)} >Remove</RemoveButton>
                 </CardControls>
             </CardDetails>
