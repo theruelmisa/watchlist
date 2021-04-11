@@ -19,7 +19,8 @@ export const tmdbRequests = {
     popularMovies: '/movie/popular',
     latestMovies: '/movie/latest',
     topRatedMovies: '/movie/top_rated',
-    trending: '/trending/movie/week'
+    trending: '/trending/movie/week',
+    genre: '/genre/movie/list',
 }
 
 export const baseImageURL = 'http://image.tmdb.org/t/p/original';

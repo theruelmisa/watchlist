@@ -8,15 +8,28 @@ export const MovieCard = styled.div`
     ${({ favorites }) => favorites && `
         display: flex;
         align-items: center;
+        justify-content: space-between;
+        box-shadow: none;
+        margin-bottom: 1rem;
     `};
 `;
 
 export const Poster = styled.div`
     margin-bottom: 1.5rem;
+
+    ${({ favorites }) => favorites && `
+        margin-bottom: 0;
+        margin-right: 1rem;
+        width: 8rem;
+        height: 8rem;
+
+    `};
 `;
 
 export const PosterImg = styled.img`
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 `;
 
 export const CardDetails = styled.div`
@@ -33,12 +46,22 @@ export const CardText = styled.div`
     & > h3 {
         margin-bottom: 1rem;
         font-size: 1.6rem;
+
     }
 
     & > p {
         font-size: 1.2rem;
         font-weight: 700;
     }
+
+    ${({ favorites }) => favorites && `
+        padding: 0;
+        margin: 0;
+
+        & > h3 {
+            font-size: 1rem;
+        }
+    `};
 `;
 
 export const CardControls = styled.div`
