@@ -22,6 +22,15 @@ const GlobalStyles = createGlobalStyle`
         line-height: 1.4;
         background: #fafafa;
         color: #3c3c3c;
+
+        ::-webkit-scrollbar {
+            width: 1rem;
+            background-color: #ccc;
+        }
+        ::-webkit-scrollbar-thumb {
+            border-radius: 5rem;
+            background-color: orange;
+        }
     }
     a { 
         color: inherit;

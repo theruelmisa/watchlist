@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const SidebarContainer = styled.div`
-    height: 100vh;
+    height: 100%;
     border-top: 1px solid #ccc;
     border-right: 1px solid #ccc;
 `;
