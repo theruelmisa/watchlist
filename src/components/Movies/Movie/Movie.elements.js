@@ -4,9 +4,12 @@ export const MovieCard = styled.div`
     padding: 1.5rem;
     border: 1px solid #ccc;
     box-shadow: 2px 3px 5px rgba(0, 0, 0, .2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     ${({ favorites }) => favorites && `
-        display: flex;
+        flex-direction: row;
         align-items: center;
         justify-content: space-between;
         box-shadow: none;

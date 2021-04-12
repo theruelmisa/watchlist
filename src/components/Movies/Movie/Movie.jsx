@@ -10,6 +10,7 @@ import {
     RemoveButton
 } from './Movie.elements';
 import { baseImageURL } from '../../../apis/tmdb';
+import ImagePlaceholder from '../../../assets/denise-jans-film.jpg';
 import { IoClose } from 'react-icons/io5'
 
 const Movie = ({movie, savedMovies, onSaveMovie, onRemoveMovie, favorites}) => {
@@ -17,7 +18,7 @@ const Movie = ({movie, savedMovies, onSaveMovie, onRemoveMovie, favorites}) => {
     return(
         <MovieCard favorites={favorites} >
             <Poster favorites={favorites} >
-                <PosterImg src={`${baseImageURL}/${movie.poster_path}`} alt={movie.title} />
+                <PosterImg src={ movie.poster_path ? `${baseImageURL}/${movie.poster_path}` : ImagePlaceholder } alt={movie.title} />
             </Poster>
         
             <CardDetails>
