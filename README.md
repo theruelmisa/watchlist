@@ -32,6 +32,8 @@ The following technologies were used to accomplish this projec t:
 
 - Kept it simple to demonstrate how I can make a call to an API and utilize the data received. Another reason is to demonstrate basic CRUD operations.
 
+- Currently not responsive to smaller devices due to the fact that this is suppose to be a dashboard and will remain that way. Plan to recreate this using **Flutter** as a separate app.
+
 ### Credits
 
 **Photos**
