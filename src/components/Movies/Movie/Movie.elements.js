@@ -61,6 +61,10 @@ export const CardText = styled.div`
         & > h3 {
             font-size: 1rem;
         }
+
+        & > p {
+            display: none;
+        }
     `};
 `;
 
