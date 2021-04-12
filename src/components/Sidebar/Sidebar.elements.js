@@ -28,6 +28,7 @@ export const LogoText = styled.h1`
 
 export const NavMenu = styled.ul`
     margin-bottom: 5rem;
+
 `;
 
 export const NavItem = styled.li`
@@ -58,7 +59,8 @@ export const NavLinks = styled(NavLink)`
 
 export const Copyright = styled.div`
     padding: 2rem 1rem;
-    text-align: center;    
+    text-align: center;   
+    transform: translateY(600%);
 `;
 
 export const CopyText = styled.p`
